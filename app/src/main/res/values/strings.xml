@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Survey Ji</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="confirmpassword">Confirm Password</string>
+    <string name="login">Login</string>
+    <string name="logout">Logout</string>
+    <string name="name">Enter your Name</string>
+    <string name="age">Enter your Age</string>
+    <string name="register">Register</string>
+</resources>
