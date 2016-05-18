@@ -13,6 +13,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
     Button bLogin;
     EditText etUsername, etPassword;
    // TextView tvRegisterLink;
+   UserLocalStore userLocalStore;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +25,9 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
      //   tvRegisterLink = (TextView) findViewById(R.id.tvRegisterLink);
         bLogin.setOnClickListener(this);
        // tvRegisterLink.setOnClickListener(this);
+
+        userLocalStore= new UserLocalStore(this);
+
     }
 
     @Override
@@ -32,6 +36,12 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
             case R.id.bLogin:
                 if (etUsername.getText().toString().equals("admin"))
                     startActivity(new Intent(this,Admin.class));
+                else
+                {
+                    User user = new User(null,null);
+                    userLocalStore.storeUserData(user);
+                    userLocalStore.setUserLoggedIn(true);
+                }
                 break;
 
            // case R.id.tvRegisterLink:

@@ -6,6 +6,6 @@
     <string name="login">Login</string>
     <string name="logout">Logout</string>
     <string name="name">Enter your Name</string>
-    <string name="age">Enter your Age</string>
+    <string name="contactnumber">Enter your Contact Number</string>
     <string name="register">Register</string>
 </resources>
