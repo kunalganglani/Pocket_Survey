@@ -27,7 +27,9 @@
         <activity android:name=".Admin" />
         <activity android:name=".UserManagement" />
         <activity android:name=".DeleteUser" />
-        <activity android:name=".ViewUser"></activity>
+        <activity android:name=".ViewUser" />
+        <activity android:name=".ViewData" />
+        <activity android:name=".AddForm"></activity>
     </application>
 
 </manifest>

@@ -10,7 +10,7 @@
     tools:context="kunalganglani.com.suveyji.Admin">
 
     <Button
-        android:id="@+id/usermanage"
+        android:id="@+id/bUsermanage"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="User Management"
@@ -18,8 +18,8 @@
         />
 
     <Button
-        android:id="@+id/viewdata"
-        android:layout_below="@id/usermanage"
+        android:id="@+id/bViewdata"
+        android:layout_below="@id/bUsermanage"
         android:layout_marginTop="40dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -27,8 +27,8 @@
         />
 
     <Button
-        android:id="@+id/addform"
-        android:layout_below="@id/viewdata"
+        android:id="@+id/bAddform"
+        android:layout_below="@id/bViewdata"
         android:layout_marginTop="40dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

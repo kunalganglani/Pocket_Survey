@@ -31,7 +31,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
         switch (v.getId()){
             case R.id.bLogin:
                 if (etUsername.getText().toString().equals("admin"))
-                    startActivity(new Intent(this,UserManagement.class));
+                    startActivity(new Intent(this,Admin.class));
                 break;
 
            // case R.id.tvRegisterLink:
@@ -41,9 +41,5 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
         }
     }
 
-    public void doNavigation(View v){
-        Intent intent= new Intent(this,Home.class);
-        startActivity(intent);
 
-    }
 }
