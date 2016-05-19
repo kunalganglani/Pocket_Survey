@@ -7,12 +7,16 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="kunalganglani.com.suveyji.Register">
+    tools:context="kunalganglani.com.suveyji.Register"
+    android:background="@drawable/edittextstyle">
 
 
     <EditText
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
+        android:ellipsize="start"
+        android:gravity="center"
+        android:background="@drawable/edittextstyle"
         android:hint="@string/name"
         android:id="@+id/etName"
         android:layout_marginTop="10dp"
@@ -20,40 +24,58 @@
 
     <EditText
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/age"
-        android:id="@+id/etAge"
+        android:layout_height="40dp"
+        android:ellipsize="start"
+        android:gravity="center"
+        android:layout_centerInParent="true"
+        android:background="@drawable/edittextstyle"
+        android:hint="@string/contactnumber"
+        android:id="@+id/etMobilenumber"
         android:layout_below="@+id/etName"
         android:layout_marginTop="40dp"
         />
 
     <EditText
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
+        android:ellipsize="start"
+        android:gravity="center"
+        android:background="@drawable/edittextstyle"
         android:hint="@string/username"
         android:id="@+id/etUsername"
-        android:layout_below="@+id/etAge"
+        android:layout_below="@+id/etMobilenumber"
         android:layout_marginTop="40dp"
         />
 
     <EditText
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:inputType="textPassword"
         android:ems="10"
         android:hint="@string/password"
         android:id="@+id/etPassword"
         android:layout_below="@+id/etUsername"
-        android:layout_marginTop="40dp" />
+        android:layout_marginTop="40dp"
+        android:layout_height="40dp"
+        android:ellipsize="start"
+        android:gravity="center"
+        android:layout_centerInParent="true"
+        android:background="@drawable/edittextstyle"
+        />
+
     <EditText
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:inputType="textPassword"
         android:ems="10"
         android:hint="@string/confirmpassword"
         android:id="@+id/etPassword2"
         android:layout_below="@+id/etPassword"
-        android:layout_marginTop="40dp" />
+        android:layout_marginTop="40dp"
+        android:layout_height="40dp"
+        android:ellipsize="start"
+        android:gravity="center"
+        android:layout_centerInParent="true"
+        android:background="@drawable/edittextstyle"
+        />
 
     <Button
         android:layout_width="match_parent"
@@ -63,5 +85,9 @@
         android:layout_centerVertical="true"
         android:layout_below="@+id/etPassword2"
         android:layout_marginTop="40dp"
+        android:textColor="#ffffff"
+        android:textSize="16sp"
+        android:textStyle="italic"
+        android:background="@drawable/mybutton"
         />
 </RelativeLayout>

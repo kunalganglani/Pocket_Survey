@@ -8,7 +8,9 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context="kunalganglani.com.suveyji.Volunteer">
+    tools:context="kunalganglani.com.suveyji.Volunteer"
+    android:focusableInTouchMode="false"
+    android:background="@drawable/edittextstyle">
 
     <TextView
         android:layout_width="wrap_content"
@@ -36,11 +38,15 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Swatch Bharat"
+        android:text="Need Assessment Survey"
         android:id="@+id/bCampaign1"
         android:layout_below="@+id/editText2"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="45dp" />
+        android:layout_marginTop="100dp"
+        android:textColor="#ffffff"
+        android:textSize="18sp"
+        android:textStyle="italic"
+        android:background="@drawable/mybutton"/>
 
     <Button
         android:layout_width="match_parent"
@@ -49,7 +55,12 @@
         android:id="@+id/bCampaign2"
         android:layout_below="@+id/bCampaign1"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="45dp" />
+        android:layout_marginTop="45dp"
+        android:textColor="#ffffff"
+        android:textSize="18sp"
+        android:textStyle="italic"
+        android:background="@drawable/mybutton"
+        />
 
     <Button
         android:layout_width="match_parent"
@@ -57,5 +68,10 @@
         android:text="Employment Scheme"
         android:id="@+id/bCampaign3"
         android:layout_below="@+id/bCampaign2"
-        android:layout_marginTop="45dp" />
+        android:layout_marginTop="45dp"
+        android:textColor="#ffffff"
+        android:textSize="18sp"
+        android:textStyle="italic"
+        android:background="@drawable/mybutton"
+        />
 </RelativeLayout>

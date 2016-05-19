@@ -7,11 +7,15 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="kunalganglani.com.suveyji.DeleteUser">
+    tools:context="kunalganglani.com.suveyji.DeleteUser"
+    android:background="@drawable/edittextstyle">
 
     <EditText
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
+        android:ellipsize="start"
+        android:gravity="center"
+        android:background="@drawable/edittextstyle"
         android:hint="@string/username"
         android:id="@+id/etUsername"
         android:layout_marginTop="40dp"
@@ -23,5 +27,9 @@
         android:text="Delete User"
         android:id="@+id/bDeleteuser"
         android:layout_centerVertical="true"
+        android:textColor="#ffffff"
+        android:textSize="18sp"
+        android:textStyle="italic"
+        android:background="@drawable/mybutton"
         />
 </RelativeLayout>

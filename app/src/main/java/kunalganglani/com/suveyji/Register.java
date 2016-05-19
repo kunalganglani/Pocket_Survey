@@ -10,7 +10,7 @@ import android.widget.EditText;
 public class Register extends AppCompatActivity implements View.OnClickListener {
 
     Button bRegister;
-    EditText etName, etAge, etUsername, etPassword;
+    EditText etName, etMobilenumber, etUsername, etPassword;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -18,7 +18,7 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
 
         bRegister= (Button) findViewById(R.id.bRegister);
         etName= (EditText) findViewById(R.id.etName);
-        etAge= (EditText) findViewById(R.id.etAge);
+        etMobilenumber = (EditText) findViewById(R.id.etMobilenumber);
         etUsername=(EditText) findViewById(R.id.etUsername);
         etPassword= (EditText) findViewById(R.id.etPassword);
 

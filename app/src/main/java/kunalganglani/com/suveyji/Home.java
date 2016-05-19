@@ -10,14 +10,14 @@ import android.widget.EditText;
 public class Home extends AppCompatActivity  implements View.OnClickListener{
 
     Button bLogout;
-    EditText etName, etAge, etUsername;
+    EditText etName, etMobilenumber, etUsername;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
         etName= (EditText) findViewById(R.id.etName);
-        etAge= (EditText) findViewById(R.id.etAge);
+        etMobilenumber = (EditText) findViewById(R.id.etMobilenumber);
         etUsername=(EditText) findViewById(R.id.etUsername);
         bLogout= (Button) findViewById(R.id.bLogout);
 
