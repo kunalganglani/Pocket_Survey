@@ -29,7 +29,9 @@
         <activity android:name=".DeleteUser" />
         <activity android:name=".ViewUser" />
         <activity android:name=".ViewData" />
-        <activity android:name=".AddForm"></activity>
+        <activity android:name=".AddForm" />
+        <activity android:name=".Volunteer"></activity>
+        <activity android:name=".Campaign1"></activity>
     </application>
 
 </manifest>
