@@ -30,7 +30,7 @@
         android:layout_centerInParent="true"
         android:background="@drawable/edittextstyle"
         android:hint="@string/contactnumber"
-        android:id="@+id/etMobilenumber"
+        android:id="@+id/etContactnumber"
         android:layout_below="@+id/etName"
         android:layout_marginTop="40dp"
         />
@@ -43,7 +43,7 @@
         android:background="@drawable/edittextstyle"
         android:hint="@string/username"
         android:id="@+id/etUsername"
-        android:layout_below="@+id/etMobilenumber"
+        android:layout_below="@+id/etContactnumber"
         android:layout_marginTop="40dp"
         />
 
