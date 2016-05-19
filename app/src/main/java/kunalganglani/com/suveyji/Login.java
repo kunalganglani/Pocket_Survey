@@ -51,7 +51,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
         switch (v.getId()){
             case R.id.bLogin:
             {
-                if (etUsername.getText().toString().equals("admin"))
+                if (etUsername.getText().toString().equals("admin") && (etPassword.getText().toString().equals("Welcome1") ))
                 {
                     loading.dismiss();
                     startActivity(new Intent(this,Admin.class));
@@ -119,7 +119,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
 
 
 
-                                    startActivity(intent);
+                                    //startActivity(intent);
                                 }
                             }, new Response.ErrorListener() {
 
