@@ -21,4 +21,181 @@
         android:text="Need Assesment Survey"
         android:textSize="20sp"
         android:textStyle="italic"/>
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/editText3" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:ellipsize="start"
+                android:gravity="center"
+                android:background="@drawable/edittextstyle"
+                android:hint="Name of Student"
+                android:id="@+id/etName"
+                android:layout_marginTop="20dp"
+                />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:ellipsize="start"
+                android:gravity="center"
+                android:layout_centerInParent="true"
+                android:background="@drawable/edittextstyle"
+                android:hint="Enter Age"
+                android:id="@+id/etAge"
+                android:layout_below="@+id/etName"
+                android:layout_marginTop="40dp"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:ellipsize="start"
+                android:gravity="center"
+                android:background="@drawable/edittextstyle"
+                android:hint="Select Gender"
+                android:id="@+id/selectgender"
+                android:layout_below="@+id/etEducationalqualification"
+                android:layout_marginTop="40dp"
+                />
+
+            <RadioGroup
+                android:id="@+id/etGender"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/selectgender"
+                android:layout_marginTop="0dp"
+                android:background="@drawable/edittextstyle"
+                >
+                <RadioButton
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:textSize="18sp"
+                    android:textColor="#736F6E"
+                    android:text="Male"/>
+                <RadioButton
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:textSize="18sp"
+                    android:textColor="#736F6E"
+                    android:text="Female"/>
+                <RadioButton
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:textSize="18sp"
+                    android:textColor="#736F6E"
+                    android:text="Others"/>
+            </RadioGroup>
+
+            <EditText
+                android:id="@+id/etAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="start"
+                android:layout_centerInParent="true"
+                android:background="@drawable/edittextstyle"
+                android:layout_marginTop="40dp"
+                android:lines="5"
+                android:gravity="top|left"
+                android:hint="\n\tPermanent Address"
+                android:inputType="textMultiLine"
+                android:scrollHorizontally="false"
+                />
+
+            <RadioGroup
+                android:id="@+id/etMaritalstatus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/etAddress"
+                android:layout_marginTop="40dp"
+                android:background="@drawable/edittextstyle"
+                >
+                <RadioButton
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:textSize="18sp"
+                    android:textColor="#736F6E"
+                    android:text="Married"/>
+                <RadioButton
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:textSize="18sp"
+                    android:textColor="#736F6E"
+                    android:text="Single"/>
+            </RadioGroup>
+
+            <RadioGroup
+                android:id="@+id/etEducationalqualification"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/etMaritalstatus"
+                android:layout_marginTop="40dp"
+                android:background="@drawable/edittextstyle"
+                >
+                <RadioButton
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:textSize="18sp"
+                    android:textColor="#736F6E"
+                    android:text="Below 8th"/>
+                <RadioButton
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:textSize="18sp"
+                    android:textColor="#736F6E"
+                    android:text="Below 10th"/>
+                <RadioButton
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:textSize="18sp"
+                    android:textColor="#736F6E"
+                    android:text="10th"/>
+                <RadioButton
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:textSize="18sp"
+                    android:textColor="#736F6E"
+                    android:text="Non Formal Education"/>
+                <RadioButton
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:textSize="18sp"
+                    android:textColor="#736F6E"
+                    android:text="Junior College"/>
+                <RadioButton
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:textSize="18sp"
+                    android:textColor="#736F6E"
+                    android:text="Graduate"/>
+            </RadioGroup>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:ellipsize="start"
+                android:gravity="center"
+                android:background="@drawable/edittextstyle"
+                android:hint="Languages Known"
+                android:id="@+id/etLanguagesknown"
+                android:layout_below="@+id/etEducationalqualification"
+                android:layout_marginTop="20dp"
+                />
+
+
+
+
+        </LinearLayout>
+    </ScrollView>
+
 </RelativeLayout>
