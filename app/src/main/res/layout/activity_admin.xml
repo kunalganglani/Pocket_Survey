@@ -8,7 +8,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="kunalganglani.com.suveyji.Admin"
-    android:background="@drawable/edittextstyle">
+    android:background="@drawable/formbackground">
 
     <Button
         android:id="@+id/bUsermanage"

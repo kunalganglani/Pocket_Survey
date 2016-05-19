@@ -8,7 +8,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".Splash"
-    android:background="@drawable/mybutton"
+    android:background="@drawable/suveybackground"
     >
 
 
@@ -16,9 +16,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/suveyjilogo"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
         android:scaleX="2"
         android:scaleY="2"
-        android:id="@+id/imageView"/>
+        android:id="@+id/imageView"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
 </RelativeLayout>
