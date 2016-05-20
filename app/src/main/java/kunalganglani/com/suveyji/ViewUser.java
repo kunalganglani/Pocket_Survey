@@ -37,7 +37,7 @@ public class ViewUser extends AppCompatActivity {
         final String REGISTER_URL = "http://prakashupadhyay.com/SurveyApp/process.php";
         final ProgressDialog loading;
         loading = ProgressDialog.show(this,"Verifying...","Please wait...",false,false);
-        //final Intent intent = new Intent(this, Volunteer.class);
+        final Intent intent = new Intent(ViewUser.this, VolunteerDetail.class);
 
         final JSONObject jSonObjData = new JSONObject();
         try{
@@ -59,12 +59,13 @@ public class ViewUser extends AppCompatActivity {
                         {
                             String jsonStr = response.getString("arrRes");
                             JSONObject myjson = new JSONObject(jsonStr);
-                            JSONArray volInfoArr = myjson.getJSONArray("volunteerRecords");
+                            final JSONArray volInfoArr = myjson.getJSONArray("volunteerRecords");
                             int sizeVolArr = volInfoArr.length();
                             //ArrayList<JSONObject> arrays = new ArrayList<JSONObject>();
                             int vol_id=-1;
                             JSONObject volJSONObject = new JSONObject();
                             final String[] mobileArray = new String[sizeVolArr];
+                            final String[] VolData = new String[7];
                             for (int i = 0; i < sizeVolArr; i++) {
                                 volJSONObject = volInfoArr.getJSONObject(i);
                                 String n1 = volJSONObject.get("vol_fname") + " " + volJSONObject.get("vol_lname");
@@ -78,6 +79,31 @@ public class ViewUser extends AppCompatActivity {
                                 @Override
                                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                                     Toast.makeText(ViewUser.this, mobileArray[position], Toast.LENGTH_SHORT).show();
+                                    try{
+                                        JSONObject temp = volInfoArr.getJSONObject(position);
+
+                                        Bundle mBundle = new Bundle();
+                                        mBundle.putString("fname", temp.get("vol_fname").toString());
+                                        mBundle.putString("lname", temp.get("vol_lname").toString());
+                                        mBundle.putString("contact", temp.get("vol_contact").toString());
+                                        mBundle.putString("age", temp.get("vol_age").toString());
+                                        mBundle.putString("gender", temp.get("vol_gender").toString());
+                                        mBundle.putString("city", temp.get("vol_city").toString());
+                                        mBundle.putString("reg", temp.get("registered_on").toString());
+
+//                                        VolData[0] = temp.get("vol_fname").toString();
+//                                        VolData[1] = temp.get("vol_lname").toString();
+//                                        VolData[2] = temp.get("vol_contact").toString();
+//                                        VolData[3] = temp.get("vol_age").toString();
+//                                        VolData[4] = temp.get("vol_gender").toString();
+//                                        VolData[5] = temp.get("vol_city").toString();
+//                                        VolData[6] = temp.get("registered_on").toString();
+
+                                        intent.putExtras(mBundle);
+                                        startActivity(intent);
+                                    }catch(Exception e){
+                                        e.printStackTrace();
+                                    }
                                 }
                             });
                         }

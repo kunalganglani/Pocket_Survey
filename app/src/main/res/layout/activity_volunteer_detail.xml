@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/Namelbl"
+        android:layout_margin="30dp"
+        android:textSize="20sp"
+        android:text="Name" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/NameVal"
+        android:textSize="20sp"
+        android:text="name"
+        android:layout_gravity="center_horizontal"
+        android:layout_alignTop="@+id/Namelbl"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/Usernamelbl"
+        android:layout_below="@id/Namelbl"
+        android:layout_margin="30dp"
+        android:textSize="20sp"
+        android:text="Age" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ageval"
+        android:textSize="20sp"
+        android:text="sdfsdf"
+        android:layout_gravity="center_horizontal"
+        android:layout_alignTop="@+id/Usernamelbl"
+        android:layout_alignLeft="@+id/NameVal"
+        android:layout_alignStart="@+id/NameVal" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/paaswordlbl"
+        android:textSize="20sp"
+        android:text="Gender"
+        android:layout_below="@+id/Usernamelbl"
+        android:layout_alignLeft="@+id/Usernamelbl"
+        android:layout_alignStart="@+id/Usernamelbl" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/genderval"
+        android:textSize="20sp"
+        android:text="sdfsdf"
+        android:layout_gravity="center_horizontal"
+        android:layout_below="@+id/Usernamelbl"
+        android:layout_alignLeft="@+id/ageval"
+        android:layout_alignStart="@+id/ageval" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/contactnumberlbl"
+        android:textSize="20sp"
+        android:text="Contact no"
+        android:layout_centerVertical="true"
+        android:layout_alignLeft="@+id/paaswordlbl"
+        android:layout_alignStart="@+id/paaswordlbl" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/contactnumberval"
+        android:textSize="20sp"
+        android:text="sdfsdf"
+        android:layout_gravity="center_horizontal"
+        android:layout_alignTop="@+id/contactnumberlbl"
+        android:layout_alignLeft="@+id/genderval"
+        android:layout_alignStart="@+id/genderval" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView"
+        android:textSize="20sp"
+        android:text="City"
+        android:layout_marginTop="44dp"
+        android:layout_below="@+id/contactnumberlbl"
+        android:layout_alignLeft="@+id/contactnumberlbl"
+        android:layout_alignStart="@+id/contactnumberlbl" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/cityval"
+        android:textSize="20sp"
+        android:text="sdfsdf"
+        android:layout_gravity="center_horizontal"
+        android:layout_alignBottom="@+id/textView"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView3"
+        android:textSize="20sp"
+        android:text="Registered on"
+        android:layout_marginTop="45dp"
+        android:layout_below="@+id/textView"
+        android:layout_alignLeft="@+id/textView"
+        android:layout_alignStart="@+id/textView" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/registeredonval"
+        android:textSize="20sp"
+        android:text="sdfsdf"
+        android:layout_gravity="center_horizontal"
+        android:layout_alignTop="@+id/textView3"
+        android:layout_alignRight="@+id/NameVal"
+        android:layout_alignEnd="@+id/NameVal" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Call"
+        android:id="@+id/button"
+        android:layout_below="@id/registeredonval"
+        android:layout_alignLeft="@+id/textView3"
+        android:layout_marginTop="40dp"
+        android:layout_alignStart="@+id/textView3"
+        android:onClick="call"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/registeredonval"
+        android:text="Message"
+        android:id="@+id/button2"
+        android:layout_marginTop="40dp"
+        android:layout_alignLeft="@+id/contactnumberval"
+        android:layout_alignStart="@+id/contactnumberval"
+        android:onClick="msg"/>
+
+</RelativeLayout>
