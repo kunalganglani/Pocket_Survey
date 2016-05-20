@@ -36,7 +36,7 @@ public class ViewUser extends AppCompatActivity {
 
         final String REGISTER_URL = "http://prakashupadhyay.com/SurveyApp/process.php";
         final ProgressDialog loading;
-        loading = ProgressDialog.show(this,"Verifying...","Please wait...",false,false);
+        loading = ProgressDialog.show(this,"Loading...","Please wait...",false,false);
         final Intent intent = new Intent(ViewUser.this, VolunteerDetail.class);
 
         final JSONObject jSonObjData = new JSONObject();

@@ -9,6 +9,14 @@
 
     android:background="@drawable/formbackground">
 
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/formtitle" >
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
     <TextView
         android:id="@+id/Namelbl"
         android:text="Name"
@@ -17,8 +25,8 @@
         android:layout_marginTop="10dp"
         android:textSize="20sp"
         android:ellipsize="start"
-        android:gravity="center"
-        android:background="@drawable/edittextstyle"/>
+        android:textStyle="bold"
+        />
 
     <TextView
         android:id="@+id/NameVal"
@@ -42,8 +50,8 @@
         android:text="Age"
         android:textSize="20sp"
         android:ellipsize="start"
-        android:gravity="center"
-        android:background="@drawable/edittextstyle"/>
+        android:textStyle="bold"
+        />
 
     <TextView
         android:id="@+id/ageval"
@@ -64,8 +72,8 @@
         android:text="Gender"
         android:textSize="20sp"
         android:ellipsize="start"
-        android:gravity="center"
-        android:background="@drawable/edittextstyle"/>
+        android:textStyle="bold"
+        />
 
     <TextView
         android:id="@+id/genderval"
@@ -86,8 +94,8 @@
         android:text="Contact Number"
         android:textSize="20sp"
         android:ellipsize="start"
-        android:gravity="center"
-        android:background="@drawable/edittextstyle"/>
+        android:textStyle="bold"
+        />
 
     <TextView
         android:id="@+id/contactnumberval"
@@ -108,8 +116,8 @@
         android:text="City"
         android:textSize="20sp"
         android:ellipsize="start"
-        android:gravity="center"
-        android:background="@drawable/edittextstyle"/>
+        android:textStyle="bold"
+        />
 
     <TextView
         android:id="@+id/cityval"
@@ -123,15 +131,14 @@
         android:layout_centerHorizontal="true"/>
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:id="@+id/textView3"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="Registered On"
         android:textSize="20sp"
-        android:text="Registered on"
-        android:layout_marginTop="45dp"
-        android:layout_below="@+id/textView"
-        android:layout_alignLeft="@+id/textView"
-        android:layout_alignStart="@+id/textView" />
+        android:ellipsize="start"
+        android:textStyle="bold"/>
 
     <TextView
         android:id="@+id/registeredonval"
@@ -165,6 +172,7 @@
         android:layout_alignLeft="@+id/contactnumberval"
         android:layout_alignStart="@+id/contactnumberval"
         android:onClick="msg"/>
-
+</LinearLayout>
+    </ScrollView>
 
 </LinearLayout>
