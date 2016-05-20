@@ -19,6 +19,6 @@
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
         android:src="@drawable/graph"
-        android:scaleX="3"
-        android:scaleY="3"/>
+        android:scaleX="2"
+        android:scaleY="2"/>
 </RelativeLayout>

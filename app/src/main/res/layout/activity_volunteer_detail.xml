@@ -152,25 +152,31 @@
         android:layout_centerHorizontal="true"/>
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Call"
         android:id="@+id/button"
-        android:layout_below="@id/registeredonval"
-        android:layout_alignLeft="@+id/textView3"
+        android:layout_centerVertical="true"
+        android:layout_below="@+id/etPassword2"
         android:layout_marginTop="40dp"
-        android:layout_alignStart="@+id/textView3"
+        android:textColor="#ffffff"
+        android:textSize="16sp"
+        android:textStyle="italic"
+        android:background="@drawable/mybutton"
         android:onClick="call"/>
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/registeredonval"
         android:text="Message"
         android:id="@+id/button2"
+        android:layout_centerVertical="true"
         android:layout_marginTop="40dp"
-        android:layout_alignLeft="@+id/contactnumberval"
-        android:layout_alignStart="@+id/contactnumberval"
+        android:textColor="#ffffff"
+        android:textSize="16sp"
+        android:textStyle="italic"
+        android:background="@drawable/mybutton"
         android:onClick="msg"/>
 </LinearLayout>
     </ScrollView>
