@@ -55,11 +55,11 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
                 String uname = etUsername.getText().toString();
                 String pwd = etPassword.getText().toString();
                 String fname = etName.getText().toString();
-                String lname = "<Surname>";//etName.getText().toString();
+                String lname = "";//etName.getText().toString();
                 String contact = etContactNumber.getText().toString();
                 String age = "25";//etName.getText().toString();
-                String gender = "<gender>";//etName.getText().toString();
-                String city = "<city>";//etName.getText().toString();
+                String gender = "Male";//etName.getText().toString();
+                String city = "Bangalore";//etName.getText().toString();
 
                 JSONObject jSonObjData = new JSONObject();
                 try

@@ -8,7 +8,7 @@ import android.widget.Button;
 
 public class Admin extends AppCompatActivity implements View.OnClickListener {
 
-    Button bUsermanage, bViewdata,bAddform;
+    Button bUsermanage, bViewdata,bAddform,bAnalytics;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,10 +17,11 @@ public class Admin extends AppCompatActivity implements View.OnClickListener {
         bUsermanage= (Button) findViewById(R.id.bUsermanage);
         bViewdata= (Button) findViewById(R.id.bViewdata);
         bAddform= (Button) findViewById(R.id.bAddform);
-
+        bAnalytics=(Button) findViewById(R.id.bAnalytics);
         bUsermanage.setOnClickListener(this);
         bViewdata.setOnClickListener(this);
         bAddform.setOnClickListener(this);
+        bAnalytics.setOnClickListener(this);
 
 
     }
@@ -38,6 +39,10 @@ public class Admin extends AppCompatActivity implements View.OnClickListener {
 
             case R.id.bAddform:
                 startActivity(new Intent(this,AddForm.class));
+                break;
+
+            case R.id.bAnalytics:
+                startActivity(new Intent(this,Analytics.class));
                 break;
 
         }

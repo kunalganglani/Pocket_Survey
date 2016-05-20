@@ -47,4 +47,17 @@
         android:textStyle="italic"
         android:background="@drawable/mybutton"
         />
+
+    <Button
+        android:id="@+id/bAnalytics"
+        android:layout_below="@id/bAddform"
+        android:layout_marginTop="40dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Analytics"
+        android:textColor="#ffffff"
+        android:textSize="18sp"
+        android:textStyle="italic"
+        android:background="@drawable/mybutton"
+        />
 </RelativeLayout>

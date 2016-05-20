@@ -33,8 +33,9 @@
         <activity android:name=".AddForm" />
         <activity android:name=".Volunteer" />
         <activity android:name=".Campaign1" />
-        <activity android:name=".DataDetail"></activity>
-        <activity android:name=".VolunteerDetail"></activity>
+        <activity android:name=".DataDetail" />
+        <activity android:name=".VolunteerDetail" />
+        <activity android:name=".Analytics"></activity>
     </application>
 
 </manifest>
