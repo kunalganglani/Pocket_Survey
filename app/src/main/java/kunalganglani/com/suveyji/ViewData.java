@@ -66,7 +66,7 @@ public class ViewData extends AppCompatActivity {
                             final String[] VolData = new String[7];
                             for (int i = 0; i < sizeVolArr; i++) {
                                 volJSONObject = volInfoArr.getJSONObject(i);
-                                String n1 = volJSONObject.get("qoption_response") + " -  " +volJSONObject.get("surdata_date")+" - "+ volJSONObject.get("surdata_place");
+                                String n1 = volJSONObject.get("qoption_response").toString();
                                 mobileArray[i] = n1;
                             }
                             ArrayAdapter adapter = new ArrayAdapter<String>(ViewData.this, R.layout.activity_listview, mobileArray);
@@ -81,7 +81,7 @@ public class ViewData extends AppCompatActivity {
                                         JSONObject temp = volInfoArr.getJSONObject(position);
 
                                         Bundle mBundle = new Bundle();
-                                        mBundle.putString("name", temp.get("qoptions_response").toString());
+                                        mBundle.putString("name", temp.get("qoption_response").toString());
                                         mBundle.putString("date", temp.get("surdata_date").toString());
                                         mBundle.putString("place", temp.get("surdata_place").toString());
                                         intent.putExtras(mBundle);
@@ -95,8 +95,6 @@ public class ViewData extends AppCompatActivity {
                         catch (JSONException e) {
                             e.printStackTrace();
                         }
-
-
 
                         //startActivity(intent);
                     }

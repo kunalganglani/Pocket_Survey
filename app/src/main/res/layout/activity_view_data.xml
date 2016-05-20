@@ -15,5 +15,13 @@
         android:layout_height="wrap_content"
         android:text="The data collected is as follows:-"
         android:textColor="#000000"
-        android:textStyle="bold"/>
+        android:textStyle="bold"
+        android:id="@+id/textabove"/>
+
+    <ListView
+        android:id="@+id/mobile_list"
+        android:layout_width="match_parent"
+        android:layout_below="@+id/textabove"
+        android:layout_height="wrap_content" >
+    </ListView>
 </RelativeLayout>
