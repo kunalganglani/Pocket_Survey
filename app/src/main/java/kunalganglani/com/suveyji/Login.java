@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
@@ -86,31 +87,41 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                                     {
                                         String jsonStr = response.getString("arrRes");
                                         JSONObject myjson = new JSONObject(jsonStr);
-                                        JSONArray volInfoArr = myjson.getJSONArray("volunteerDetails");
-                                        int sizeVolArr = volInfoArr.length();
-                                        //ArrayList<JSONObject> arrays = new ArrayList<JSONObject>();
-                                        int vol_id=-1;
-                                        JSONObject volJSONObject = new JSONObject();
-                                        for (int i = 0; i < sizeVolArr; i++) {
-                                            volJSONObject = volInfoArr.getJSONObject(i);
-                                            //vol_id = Integer.parseInt(another_json_object.get("vol_id").toString());
-
-                                            //arrays.add(volJSONObject);
+                                        if((Boolean)(myjson.get("userExistFlag"))==false)
+                                        {
+                                            Toast.makeText(Login.this, "Incorrect Credentials!", Toast.LENGTH_LONG).show();
                                         }
+                                        else
+                                        {
+                                            JSONArray volInfoArr = myjson.getJSONArray("volunteerDetails");
+
+                                            int sizeVolArr = volInfoArr.length();
+                                            //ArrayList<JSONObject> arrays = new ArrayList<JSONObject>();
+                                            int vol_id=-1;
+                                            JSONObject volJSONObject = new JSONObject();
+                                            for (int i = 0; i < sizeVolArr; i++) {
+                                                volJSONObject = volInfoArr.getJSONObject(i);
+                                                //vol_id = Integer.parseInt(another_json_object.get("vol_id").toString());
+
+                                                //arrays.add(volJSONObject);
+                                            }
 
 
-                                        //JSONArray volInfoArr = response.getJSONArray("arrRes");
-                                        //int sizeVol =volInfoArr.length();
-                                        //ArrayList<JSONObject> arrays = new ArrayList<JSONObject>();
+                                            //JSONArray volInfoArr = response.getJSONArray("arrRes");
+                                            //int sizeVol =volInfoArr.length();
+                                            //ArrayList<JSONObject> arrays = new ArrayList<JSONObject>();
                                             /*
                                             for (int i = 0; i < sizeVol; i++) {
                                                 JSONObject another_json_object = volInfoArr.getJSONObject(i);
                                                 arrays.add(another_json_object);
                                             }*/
-                                        System.out.println(volJSONObject);
-                                        System.out.println("ID of Vol: "+vol_id);
-                                        intent.putExtra("volInfoStr",volJSONObject.toString() );
-                                        startActivity(intent);
+                                            System.out.println(volJSONObject);
+                                            System.out.println("ID of Vol: "+vol_id);
+                                            intent.putExtra("volInfoStr",volJSONObject.toString() );
+                                            startActivity(intent);
+                                        }
+
+
 
                                     }
                                     catch (JSONException e) {
