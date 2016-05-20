@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Survey Ji</string>
+    <string name="app_name">Pocket Survey</string>
     <string name="username">Username</string>
     <string name="password">Password</string>
     <string name="confirmpassword">Confirm Password</string>
