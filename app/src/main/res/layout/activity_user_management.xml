@@ -19,7 +19,6 @@
         android:layout_marginTop="40dp"
         android:textColor="#ffffff"
         android:textSize="18sp"
-        android:textStyle="italic"
         android:background="@drawable/mybutton"
         />
 
@@ -32,7 +31,6 @@
         android:text="Delete User"
         android:textColor="#ffffff"
         android:textSize="18sp"
-        android:textStyle="italic"
         android:background="@drawable/mybutton"
         />
 
@@ -45,7 +43,6 @@
         android:text="View User"
         android:textColor="#ffffff"
         android:textSize="18sp"
-        android:textStyle="italic"
         android:background="@drawable/mybutton"
         />
 </RelativeLayout>

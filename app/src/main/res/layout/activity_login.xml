@@ -42,7 +42,6 @@
         android:layout_centerVertical="true"
         android:textColor="#ffffff"
         android:textSize="18sp"
-        android:textStyle="italic"
         android:background="@drawable/mybutton"
         />
 

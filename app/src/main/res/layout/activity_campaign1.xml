@@ -61,12 +61,11 @@
 
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:ellipsize="start"
-                android:gravity="center"
-                android:background="@drawable/edittextstyle"
                 android:hint="Select Gender"
                 android:id="@+id/selectgender"
+                android:layout_height="wrap_content"
+                android:ellipsize="start"
+                android:textSize="18sp"
                 android:layout_below="@+id/etEducationalqualification"
                 android:layout_marginTop="40dp"
                 />
@@ -115,15 +114,14 @@
                 />
 
             <TextView
+                android:layout_height="wrap_content"
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
                 android:ellipsize="start"
-                android:gravity="center"
-                android:background="@drawable/edittextstyle"
+                android:textSize="18sp"
+                android:layout_below="@+id/etEducationalqualification"
+                android:layout_marginTop="40dp"
                 android:hint="Select Marital Status"
                 android:id="@+id/selectmaritalstatus"
-                android:layout_below="@+id/etP"
-                android:layout_marginTop="40dp"
                 />
 
             <RadioGroup
@@ -149,15 +147,15 @@
             </RadioGroup>
 
             <TextView
+                android:layout_height="wrap_content"
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
                 android:ellipsize="start"
-                android:gravity="center"
-                android:background="@drawable/edittextstyle"
+                android:textSize="18sp"
+                android:layout_below="@+id/etEducationalqualification"
+                android:layout_marginTop="40dp"
                 android:hint="Select Educational Qualification"
                 android:id="@+id/selecteducationalqualification"
-                android:layout_below="@+id/etP"
-                android:layout_marginTop="40dp"
+
                 />
             <RadioGroup
                 android:id="@+id/etEducationalqualification"
@@ -217,15 +215,15 @@
                 />
 
             <TextView
+                android:layout_height="wrap_content"
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
                 android:ellipsize="start"
-                android:gravity="center"
-                android:background="@drawable/edittextstyle"
+                android:textSize="18sp"
+                android:layout_below="@+id/etEducationalqualification"
+                android:layout_marginTop="40dp"
                 android:hint="Select Present Status"
                 android:id="@+id/selectpresentstatus"
-                android:layout_below="@+id/etLanguagesknown"
-                android:layout_marginTop="40dp"
+
                 />
             <RadioGroup
                 android:id="@+id/etPresentstatus"
@@ -307,15 +305,15 @@
 
 
             <TextView
+                android:layout_height="wrap_content"
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
                 android:ellipsize="start"
-                android:gravity="center"
-                android:background="@drawable/edittextstyle"
+                android:textSize="18sp"
+                android:layout_below="@+id/etEducationalqualification"
+                android:layout_marginTop="40dp"
                 android:hint="Interested in Computer Course"
                 android:id="@+id/interest"
-                android:layout_below="@+id/etTotalIncome"
-                android:layout_marginTop="40dp"
+
                 />
             <RadioGroup
                 android:id="@+id/etInterest"
@@ -362,7 +360,6 @@
                 android:layout_marginTop="40dp"
                 android:textColor="#ffffff"
                 android:textSize="16sp"
-                android:textStyle="italic"
                 android:background="@drawable/mybutton"
                 />
 

@@ -161,7 +161,6 @@
         android:layout_marginTop="40dp"
         android:textColor="#ffffff"
         android:textSize="16sp"
-        android:textStyle="italic"
         android:background="@drawable/mybutton"
         android:onClick="call"/>
 
@@ -175,7 +174,6 @@
         android:layout_marginTop="40dp"
         android:textColor="#ffffff"
         android:textSize="16sp"
-        android:textStyle="italic"
         android:background="@drawable/mybutton"
         android:onClick="msg"/>
 </LinearLayout>
