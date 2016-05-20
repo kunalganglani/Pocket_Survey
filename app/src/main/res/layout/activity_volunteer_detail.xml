@@ -1,108 +1,126 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+
+    android:background="@drawable/formbackground">
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:id="@+id/Namelbl"
-        android:layout_margin="30dp"
+        android:text="Name"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:textSize="20sp"
-        android:text="Name" />
+        android:ellipsize="start"
+        android:gravity="center"
+        android:background="@drawable/edittextstyle"/>
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:id="@+id/NameVal"
         android:textSize="20sp"
         android:text="name"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="0dp"
+        android:ellipsize="start"
+        android:gravity="center"
+        android:background="@drawable/edittextstyle"
         android:layout_gravity="center_horizontal"
         android:layout_alignTop="@+id/Namelbl"
         android:layout_centerHorizontal="true" />
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:id="@+id/Usernamelbl"
-        android:layout_below="@id/Namelbl"
-        android:layout_margin="30dp"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="Age"
         android:textSize="20sp"
-        android:text="Age" />
+        android:ellipsize="start"
+        android:gravity="center"
+        android:background="@drawable/edittextstyle"/>
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:id="@+id/ageval"
-        android:textSize="20sp"
-        android:text="sdfsdf"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="0dp"
+        android:ellipsize="start"
+        android:gravity="center"
+        android:background="@drawable/edittextstyle"
         android:layout_gravity="center_horizontal"
-        android:layout_alignTop="@+id/Usernamelbl"
-        android:layout_alignLeft="@+id/NameVal"
-        android:layout_alignStart="@+id/NameVal" />
+        android:layout_centerHorizontal="true"/>
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:id="@+id/paaswordlbl"
-        android:textSize="20sp"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
         android:text="Gender"
-        android:layout_below="@+id/Usernamelbl"
-        android:layout_alignLeft="@+id/Usernamelbl"
-        android:layout_alignStart="@+id/Usernamelbl" />
+        android:textSize="20sp"
+        android:ellipsize="start"
+        android:gravity="center"
+        android:background="@drawable/edittextstyle"/>
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:id="@+id/genderval"
-        android:textSize="20sp"
-        android:text="sdfsdf"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="0dp"
+        android:ellipsize="start"
+        android:gravity="center"
+        android:background="@drawable/edittextstyle"
         android:layout_gravity="center_horizontal"
-        android:layout_below="@+id/Usernamelbl"
-        android:layout_alignLeft="@+id/ageval"
-        android:layout_alignStart="@+id/ageval" />
+        android:layout_centerHorizontal="true"/>
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:id="@+id/contactnumberlbl"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="Contact Number"
         android:textSize="20sp"
-        android:text="Contact no"
-        android:layout_centerVertical="true"
-        android:layout_alignLeft="@+id/paaswordlbl"
-        android:layout_alignStart="@+id/paaswordlbl" />
+        android:ellipsize="start"
+        android:gravity="center"
+        android:background="@drawable/edittextstyle"/>
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:id="@+id/contactnumberval"
-        android:textSize="20sp"
-        android:text="sdfsdf"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="0dp"
+        android:ellipsize="start"
+        android:gravity="center"
+        android:background="@drawable/edittextstyle"
         android:layout_gravity="center_horizontal"
-        android:layout_alignTop="@+id/contactnumberlbl"
-        android:layout_alignLeft="@+id/genderval"
-        android:layout_alignStart="@+id/genderval" />
+        android:layout_centerHorizontal="true"/>
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:id="@+id/textView"
-        android:textSize="20sp"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
         android:text="City"
-        android:layout_marginTop="44dp"
-        android:layout_below="@+id/contactnumberlbl"
-        android:layout_alignLeft="@+id/contactnumberlbl"
-        android:layout_alignStart="@+id/contactnumberlbl" />
+        android:textSize="20sp"
+        android:ellipsize="start"
+        android:gravity="center"
+        android:background="@drawable/edittextstyle"/>
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:id="@+id/cityval"
-        android:textSize="20sp"
-        android:text="sdfsdf"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="0dp"
+        android:ellipsize="start"
+        android:gravity="center"
+        android:background="@drawable/edittextstyle"
         android:layout_gravity="center_horizontal"
-        android:layout_alignBottom="@+id/textView"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -116,15 +134,15 @@
         android:layout_alignStart="@+id/textView" />
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:id="@+id/registeredonval"
-        android:textSize="20sp"
-        android:text="sdfsdf"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="0dp"
+        android:ellipsize="start"
+        android:gravity="center"
+        android:background="@drawable/edittextstyle"
         android:layout_gravity="center_horizontal"
-        android:layout_alignTop="@+id/textView3"
-        android:layout_alignRight="@+id/NameVal"
-        android:layout_alignEnd="@+id/NameVal" />
+        android:layout_centerHorizontal="true"/>
 
     <Button
         android:layout_width="wrap_content"
@@ -148,4 +166,5 @@
         android:layout_alignStart="@+id/contactnumberval"
         android:onClick="msg"/>
 
-</RelativeLayout>
+
+</LinearLayout>
