@@ -3,6 +3,7 @@ package kunalganglani.com.suveyji;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -10,10 +11,12 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
-/**
- * Created by I325566 on 5/20/2016.
- */
 public class VolunteerDetail extends AppCompatActivity {
+    public void onBackPressed() {
+        super.onBackPressed();
+        overridePendingTransition(R.anim.left_in, R.anim.right_out);
+    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

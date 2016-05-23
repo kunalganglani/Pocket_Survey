@@ -26,6 +26,11 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class ViewData extends AppCompatActivity {
+    public void onBackPressed() {
+        super.onBackPressed();
+        overridePendingTransition(R.anim.left_in, R.anim.right_out);
+    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

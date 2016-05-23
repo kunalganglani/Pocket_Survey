@@ -56,6 +56,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                 {
                     loading.dismiss();
                     startActivity(new Intent(this,Admin.class));
+                    overridePendingTransition(R.anim.right_in, R.anim.left_out);
                 }
 
                 else
@@ -119,6 +120,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                                             System.out.println("ID of Vol: "+vol_id);
                                             intent.putExtra("volInfoStr",volJSONObject.toString() );
                                             startActivity(intent);
+                                            overridePendingTransition(R.anim.right_in, R.anim.left_out);
                                         }
 
 

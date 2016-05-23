@@ -26,6 +26,11 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class ViewUser extends AppCompatActivity {
+    public void onBackPressed() {
+        super.onBackPressed();
+        overridePendingTransition(R.anim.left_in, R.anim.right_out);
+    }
+
 
     //String[] mobileArray = {"Android","IPhone","WindowsMobile","Blackberry","WebOS","Ubuntu","Windows7","Max OS X"};
 
@@ -101,6 +106,7 @@ public class ViewUser extends AppCompatActivity {
 
                                         intent.putExtras(mBundle);
                                         startActivity(intent);
+                                        overridePendingTransition(R.anim.right_in, R.anim.left_out);
                                     }catch(Exception e){
                                         e.printStackTrace();
                                     }

@@ -11,6 +11,11 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class Volunteer extends AppCompatActivity implements View.OnClickListener {
+    public void onBackPressed() {
+        super.onBackPressed();
+        overridePendingTransition(R.anim.left_in, R.anim.right_out);
+    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,14 +46,17 @@ public class Volunteer extends AppCompatActivity implements View.OnClickListener
         switch (v.getId()){
             case R.id.bCampaign1:
                 startActivity(new Intent(this,Campaign1.class));
+                overridePendingTransition(R.anim.right_in, R.anim.left_out);
                 break;
 
             case R.id.bCampaign2:
 //                startActivity(new Intent(this,Campaign1.class));
+                overridePendingTransition(R.anim.right_in, R.anim.left_out);
                 break;
 
             case R.id.bCampaign3:
 //                startActivity(new Intent(this,Campaign1.class));
+                overridePendingTransition(R.anim.right_in, R.anim.left_out);
                 break;
 
             // case R.id.tvRegisterLink:

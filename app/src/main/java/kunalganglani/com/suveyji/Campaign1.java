@@ -27,6 +27,11 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Campaign1 extends AppCompatActivity implements View.OnClickListener {
+    public void onBackPressed() {
+        super.onBackPressed();
+        overridePendingTransition(R.anim.bottom_in, R.anim.top_out);
+    }
+
 
     TextView formtitle;
     EditText etName, etAge,etAddress,etLanguagesknown,etNoOfPeople,etNonEarning,etTotalIncome,etPlace;

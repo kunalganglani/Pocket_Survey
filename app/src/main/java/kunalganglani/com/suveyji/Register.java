@@ -23,6 +23,11 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Register extends AppCompatActivity implements View.OnClickListener {
+    public void onBackPressed() {
+        super.onBackPressed();
+        overridePendingTransition(R.anim.left_in, R.anim.right_out);
+    }
+
 
     Button bRegister;
     EditText etName, etContactNumber, etUsername, etPassword;
@@ -90,6 +95,7 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
                                 System.out.println("\n\n Response from Backend:\n" + response.toString());
                                 // Navigating Back to User Management Screen.
                                 startActivity(intent);
+                                overridePendingTransition(R.anim.right_in, R.anim.left_out);
                             }
                         }, new Response.ErrorListener() {
 

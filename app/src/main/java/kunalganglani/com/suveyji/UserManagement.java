@@ -7,6 +7,11 @@ import android.view.View;
 import android.widget.Button;
 
 public class UserManagement extends AppCompatActivity implements View.OnClickListener{
+    public void onBackPressed() {
+        super.onBackPressed();
+        overridePendingTransition(R.anim.left_in, R.anim.right_out);
+    }
+
 
     Button bCreateuser,bDeleteuser,bViewuser;
 
@@ -31,14 +36,17 @@ public class UserManagement extends AppCompatActivity implements View.OnClickLis
         switch (v.getId()){
             case R.id.bCreateuser:
                 startActivity(new Intent(this,Register.class));
+                overridePendingTransition(R.anim.right_in, R.anim.left_out);
                 break;
 
             case R.id.bDeleteuser:
                 startActivity(new Intent(this,DeleteUser.class));
+                overridePendingTransition(R.anim.right_in, R.anim.left_out);
                 break;
 
             case R.id.bViewuser:
                 startActivity(new Intent(this,ViewUser.class));
+                overridePendingTransition(R.anim.right_in, R.anim.left_out);
                 break;
 
 

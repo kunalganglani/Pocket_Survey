@@ -3,10 +3,12 @@ package kunalganglani.com.suveyji;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
 public class Admin extends AppCompatActivity implements View.OnClickListener {
+
 
     Button bUsermanage, bViewdata,bAddform,bAnalytics;
 
@@ -24,6 +26,12 @@ public class Admin extends AppCompatActivity implements View.OnClickListener {
         bAnalytics.setOnClickListener(this);
 
 
+
+    }
+
+    public void onBackPressed() {
+        super.onBackPressed();
+        overridePendingTransition(R.anim.left_in, R.anim.right_out);
     }
 
     @Override
@@ -31,18 +39,22 @@ public class Admin extends AppCompatActivity implements View.OnClickListener {
         switch (v.getId()){
             case R.id.bUsermanage:
                     startActivity(new Intent(this,UserManagement.class));
+                overridePendingTransition(R.anim.right_in, R.anim.left_out);
                 break;
 
             case R.id.bViewdata:
                 startActivity(new Intent(this,ViewData.class));
+                overridePendingTransition(R.anim.right_in, R.anim.left_out);
                 break;
 
             case R.id.bAddform:
                 startActivity(new Intent(this,AddForm.class));
+                overridePendingTransition(R.anim.right_in, R.anim.left_out);
                 break;
 
             case R.id.bAnalytics:
                 startActivity(new Intent(this,Analytics.class));
+                overridePendingTransition(R.anim.right_in, R.anim.left_out);
                 break;
 
         }
