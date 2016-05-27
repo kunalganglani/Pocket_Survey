@@ -155,27 +155,27 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Call"
-        android:id="@+id/button"
+        android:id="@+id/callbtn"
         android:layout_centerVertical="true"
         android:layout_below="@+id/etPassword2"
         android:layout_marginTop="40dp"
         android:textColor="#ffffff"
         android:textSize="16sp"
         android:background="@drawable/mybutton"
-        android:onClick="call"/>
+        />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/registeredonval"
         android:text="Message"
-        android:id="@+id/button2"
+        android:id="@+id/msgbtn"
         android:layout_centerVertical="true"
         android:layout_marginTop="40dp"
         android:textColor="#ffffff"
         android:textSize="16sp"
         android:background="@drawable/mybutton"
-        android:onClick="msg"/>
+        />
 </LinearLayout>
     </ScrollView>
 
