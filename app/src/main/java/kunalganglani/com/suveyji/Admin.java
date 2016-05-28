@@ -23,9 +23,6 @@ public class Admin extends AppCompatActivity implements View.OnClickListener {
         bViewdata.setOnClickListener(this);
         bAddform.setOnClickListener(this);
         bAnalytics.setOnClickListener(this);
-        // Comment2 Added
-        // Comment3 Added
-        String str1 = "INDIA";
 
 
 
