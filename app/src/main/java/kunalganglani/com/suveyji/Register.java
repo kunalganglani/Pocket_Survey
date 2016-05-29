@@ -16,6 +16,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
@@ -43,7 +45,8 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
     }
 
     Button bRegister, btnSelect;
-    EditText etFName, etLName, etContactNumber, etUsername, etPassword;
+    EditText etFName, etLName, etContactNumber, etUsername, etPassword, etCity, etAge, selectgender, etDob;
+    RadioGroup etGender;
     ImageView imageViewVol;
     private String userChoosenTask;
     private int REQUEST_CAMERA = 0, SELECT_FILE = 1;
@@ -56,6 +59,10 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
         bRegister = (Button) findViewById(R.id.bRegister);
         etFName = (EditText) findViewById(R.id.etFName);
         etLName = (EditText) findViewById(R.id.etLName);
+        etCity = (EditText) findViewById(R.id.etCity);
+        etAge = (EditText) findViewById(R.id.etAge);
+        etDob= (EditText) findViewById(R.id.etDob);
+        etGender = (RadioGroup) findViewById(R.id.etGender);
         etContactNumber = (EditText) findViewById(R.id.etContactnumber);
         etUsername =(EditText) findViewById(R.id.etUsername);
         etPassword = (EditText) findViewById(R.id.etPassword);
@@ -199,8 +206,8 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
 
     @Override
     public void onClick(View v) {
-        //final String REGISTER_URL = "http://prakashupadhyay.com/SurveyApp/process.php";
-        final String REGISTER_URL = "http://10.0.2.2:8282/PocketSurvey/process.php";
+        final String REGISTER_URL = "http://prakashupadhyay.com/SurveyApp/process.php";
+        //final String REGISTER_URL = "http://10.0.2.2:8282/PocketSurvey/process.php";
 
         final ProgressDialog loading;
         loading = ProgressDialog.show(this,"Registering...","Please wait...",false,false);
@@ -209,14 +216,19 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
         switch (v.getId()){
             case R.id.bRegister:
             {
+
                 String uname = etUsername.getText().toString();
                 String pwd = etPassword.getText().toString();
                 String fname = etFName.getText().toString();
                 String lname = etLName.getText().toString();//etName.getText().toString();
-                String city = "Bangalore";//etName.getText().toString();
-                String age = "25";//etName.getText().toString();
-                String gender = "Male";//etName.getText().toString();
-                String dob = "1991-07-21";
+                String city = etCity.getText().toString();
+                String age = etAge.getText().toString();
+                String dob = etDob.getText().toString();
+
+                int genderId= etGender.getCheckedRadioButtonId();
+                RadioButton etGenderRadio = (RadioButton) findViewById(genderId);
+                String gender= etGenderRadio.getText().toString();
+
                 String contact = etContactNumber.getText().toString();
 
                 imageViewVol.setDrawingCacheEnabled(true);

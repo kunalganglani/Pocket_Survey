@@ -44,11 +44,87 @@
             android:layout_height="40dp"
             android:ellipsize="start"
             android:gravity="center"
+            android:background="@drawable/edittextstyle"
+            android:hint="Enter City"
+            android:id="@+id/etCity"
+            android:layout_below="@+id/etLName"
+            android:layout_marginTop="40dp"
+            />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:ellipsize="start"
+            android:gravity="center"
+            android:background="@drawable/edittextstyle"
+            android:hint="Enter Age"
+            android:id="@+id/etAge"
+            android:layout_below="@+id/etCity"
+            android:layout_marginTop="40dp"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:hint="Select Gender"
+            android:id="@+id/selectgender"
+            android:layout_height="wrap_content"
+            android:ellipsize="start"
+            android:textSize="18sp"
+            android:layout_below="@+id/etAge"
+            android:layout_marginTop="40dp"
+            />
+
+        <RadioGroup
+            android:id="@+id/etGender"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/selectgender"
+            android:layout_marginTop="0dp"
+            android:background="@drawable/edittextstyle"
+            >
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:textSize="18sp"
+                android:textColor="#736F6E"
+                android:text="Male"/>
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:textSize="18sp"
+                android:textColor="#736F6E"
+                android:text="Female"/>
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:textSize="18sp"
+                android:textColor="#736F6E"
+                android:text="Others"/>
+        </RadioGroup>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:ellipsize="start"
+            android:gravity="center"
+            android:layout_centerInParent="true"
+            android:background="@drawable/edittextstyle"
+            android:hint="Enter Dob"
+            android:id="@+id/etDob"
+            android:layout_below="@+id/etGender"
+            android:layout_marginTop="40dp"
+            />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:ellipsize="start"
+            android:gravity="center"
             android:layout_centerInParent="true"
             android:background="@drawable/edittextstyle"
             android:hint="@string/contactnumber"
             android:id="@+id/etContactnumber"
-            android:layout_below="@+id/etLName"
+            android:layout_below="@+id/etDob"
             android:layout_marginTop="40dp"
             />
 

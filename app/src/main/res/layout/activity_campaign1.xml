@@ -80,9 +80,11 @@
                 >
                 <RadioButton
                     android:layout_width="match_parent"
+
                     android:layout_height="40dp"
                     android:textSize="18sp"
                     android:textColor="#736F6E"
+
                     android:text="Male"/>
                 <RadioButton
                     android:layout_width="match_parent"
