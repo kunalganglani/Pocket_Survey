@@ -1,9 +1,13 @@
 package kunalganglani.com.suveyji;
 
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Base64;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -22,6 +26,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.FileOutputStream;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -31,7 +36,6 @@ public class ViewUser extends AppCompatActivity {
         overridePendingTransition(R.anim.left_in, R.anim.right_out);
     }
 
-
     //String[] mobileArray = {"Android","IPhone","WindowsMobile","Blackberry","WebOS","Ubuntu","Windows7","Max OS X"};
 
     @Override
@@ -40,6 +44,8 @@ public class ViewUser extends AppCompatActivity {
         setContentView(R.layout.activity_view_user);
 
         final String REGISTER_URL = "http://prakashupadhyay.com/SurveyApp/process.php";
+        //final String REGISTER_URL = "http://10.0.2.2:8282/PocketSurvey/process.php";
+
         final ProgressDialog loading;
         loading = ProgressDialog.show(this,"Loading...","Please wait...",false,false);
         final Intent intent = new Intent(ViewUser.this, VolunteerDetail.class);
@@ -88,13 +94,33 @@ public class ViewUser extends AppCompatActivity {
                                         JSONObject temp = volInfoArr.getJSONObject(position);
 
                                         Bundle mBundle = new Bundle();
+                                        mBundle.putString("id", temp.get("vol_id").toString());
+                                        mBundle.putString("uname", temp.get("vol_uname").toString());
                                         mBundle.putString("fname", temp.get("vol_fname").toString());
                                         mBundle.putString("lname", temp.get("vol_lname").toString());
-                                        mBundle.putString("contact", temp.get("vol_contact").toString());
+                                        mBundle.putString("city", temp.get("vol_city").toString());
                                         mBundle.putString("age", temp.get("vol_age").toString());
                                         mBundle.putString("gender", temp.get("vol_gender").toString());
-                                        mBundle.putString("city", temp.get("vol_city").toString());
-                                        mBundle.putString("reg", temp.get("registered_on").toString());
+                                        mBundle.putString("dob", temp.get("vol_dob").toString());
+                                        mBundle.putString("dor", temp.get("vol_dor").toString());
+                                        mBundle.putString("gender", temp.get("vol_gender").toString());
+                                        mBundle.putString("contact", temp.get("vol_contact").toString());
+                                        try {
+                                            byte[] decodedString = Base64.decode(temp.get("vol_photo").toString(), Base64.DEFAULT);
+                                            String filename = "bitmap.png";
+                                            FileOutputStream stream = openFileOutput(filename, Context.MODE_PRIVATE);
+                                            Bitmap decodedByte = BitmapFactory.decodeByteArray(decodedString, 0, decodedString.length);
+                                            decodedByte.compress(Bitmap.CompressFormat.PNG, 100, stream);
+                                            stream.close();
+                                            decodedByte.recycle();
+                                            mBundle.putString("profilePicNameStr",filename);
+
+                                        }
+                                        catch (Exception e)
+                                        {
+                                            e.printStackTrace();
+                                        }
+                                        //mBundle.putString("photo", temp.get("vol_dor").toString());
 
 //                                        VolData[0] = temp.get("vol_fname").toString();
 //                                        VolData[1] = temp.get("vol_lname").toString();
@@ -125,8 +151,8 @@ public class ViewUser extends AppCompatActivity {
 
             @Override
             public void onErrorResponse(VolleyError error) {
-                    loading.dismiss();
-                   // System.out.println("\n\n Response from Backend:\n" + error.toString());
+                loading.dismiss();
+                // System.out.println("\n\n Response from Backend:\n" + error.toString());
             }
         }) {
 

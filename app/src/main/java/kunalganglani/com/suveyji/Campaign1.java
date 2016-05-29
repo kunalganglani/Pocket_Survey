@@ -1,11 +1,14 @@
 package kunalganglani.com.suveyji;
 
 import android.app.ProgressDialog;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Base64;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
@@ -23,20 +26,22 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.ByteArrayOutputStream;
 import java.util.HashMap;
 import java.util.Map;
 
 public class Campaign1 extends AppCompatActivity implements View.OnClickListener {
     public void onBackPressed() {
         super.onBackPressed();
-        overridePendingTransition(R.anim.bottom_in, R.anim.top_out);
+        overridePendingTransition(R.anim.left_in, R.anim.right_out);
     }
-
-
     TextView formtitle;
     EditText etName, etAge,etAddress,etLanguagesknown,etNoOfPeople,etNonEarning,etTotalIncome,etPlace;
     RadioGroup etGender,etMaritalstatus,etEducationalqualification,etPresentstatus,etInterest;
     Button bSubmit;
+
+    ImageView imageViewScanned1, imageViewScanned2, imageViewScanned3;
+    EditText etScannedFlag;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,13 +68,30 @@ public class Campaign1 extends AppCompatActivity implements View.OnClickListener
         //RadioButton radioButton = (RadioButton) findViewById(selectedId);
         //String gender= radioButton.getText().toString();
 
+        etScannedFlag = (EditText) findViewById(R.id.etScannedFlag);
+
+        imageViewScanned1 = (ImageView) findViewById(R.id.imageViewScanned1);
+        imageViewScanned2 = (ImageView) findViewById(R.id.imageViewScanned2);
+        imageViewScanned3 = (ImageView) findViewById(R.id.imageViewScanned3);
+
+
 
     }
+
+    public String getStringImage(Bitmap bmp){
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        bmp.compress(Bitmap.CompressFormat.PNG, 100, baos);
+        byte[] imageBytes = baos.toByteArray();
+        String encodedImage = Base64.encodeToString(imageBytes, Base64.DEFAULT);
+        return encodedImage;
+    }
+
 
     @Override
     public void onClick(View v) {
         String form_title = formtitle.getText().toString();
         String name = etName.getText().toString();
+        String surveyeeName = etName.getText().toString();
         String age = etAge.getText().toString();
         String address = etAddress.getText().toString();
         String languages_known= etLanguagesknown.getText().toString();
@@ -99,11 +121,59 @@ public class Campaign1 extends AppCompatActivity implements View.OnClickListener
         RadioButton etInterestRadio = (RadioButton) findViewById(interestId);
         String interest= etInterestRadio.getText().toString();
 
-        final String REGISTER_URL = "http://prakashupadhyay.com/SurveyApp/process.php";
+
+        String scannedFlagStr = etScannedFlag.getText().toString();
+        // Collecting the Images of Scanned Documents. Fixed No. of Images(only 3) for now.
+        imageViewScanned1.setDrawingCacheEnabled(true);
+
+        // this is the important code :)
+        // Without it the view will have a dimension of 0,0 and the bitmap will be null
+        imageViewScanned1.measure(View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED),
+                View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED));
+        imageViewScanned1.layout(0, 0, 800, 800);
+
+        imageViewScanned1.buildDrawingCache(true);
+
+        String scannedData1 = getStringImage(imageViewScanned1.getDrawingCache());
+        imageViewScanned1.setDrawingCacheEnabled(false); // clear drawing cache
+        // ############
+        imageViewScanned2.setDrawingCacheEnabled(true);
+
+        // this is the important code :)
+        // Without it the view will have a dimension of 0,0 and the bitmap will be null
+        imageViewScanned2.measure(View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED),
+                View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED));
+        imageViewScanned2.layout(0, 0, 800, 800);
+
+        imageViewScanned2.buildDrawingCache(true);
+
+        String scannedData2 = getStringImage(imageViewScanned2.getDrawingCache());
+        imageViewScanned2.setDrawingCacheEnabled(false); // clear drawing cache
+        // ############
+        imageViewScanned3.setDrawingCacheEnabled(true);
+
+        // this is the important code :)
+        // Without it the view will have a dimension of 0,0 and the bitmap will be null
+        imageViewScanned3.measure(View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED),
+                View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED));
+        imageViewScanned3.layout(0, 0, 800, 800);
+
+        imageViewScanned3.buildDrawingCache(true);
+
+        String scannedData3 = getStringImage(imageViewScanned3.getDrawingCache());
+        imageViewScanned3.setDrawingCacheEnabled(false); // clear drawing cache
+        // ############
+
+
+        //final String REGISTER_URL = "http://prakashupadhyay.com/SurveyApp/process.php";
+        final String REGISTER_URL = "http://10.0.2.2:8282/PocketSurvey/process.php";
+
+
         JSONObject jSonObjData = new JSONObject();
         try {
             /* ########## Testing Create Forms/SaveFormData Service ########### */
             JSONArray queryArr = new JSONArray();
+            JSONArray queryScannedArr = new JSONArray();
 
             JSONArray optionsArr1 = new JSONArray();
 
@@ -224,7 +294,7 @@ public class Campaign1 extends AppCompatActivity implements View.OnClickListener
             optionObj9.put("optId", 1);
             optionObj9.put("value", no_of_people);
             optionObj9.put("type", "textBox");
-            optionsArr9.put(optionObj4);
+            optionsArr9.put(optionObj9);
 
             JSONObject queryObj9 = new JSONObject();
             queryObj9.put("qryId", 9);
@@ -266,7 +336,7 @@ public class Campaign1 extends AppCompatActivity implements View.OnClickListener
             optionObj12.put("optId", 1);
             optionObj12.put("value", interest);
             optionObj12.put("type", "radioButton");
-            optionsArr2.put(optionObj12);
+            optionsArr12.put(optionObj12);
 
             JSONObject queryObj12 = new JSONObject();
             queryObj12.put("qryId", 12);
@@ -274,14 +344,54 @@ public class Campaign1 extends AppCompatActivity implements View.OnClickListener
             queryObj12.put("options", optionsArr12.toString());
             queryArr.put(queryObj12);
 
+            //----------
+            JSONArray optionsArr13 = new JSONArray();
+
+            JSONObject optionObj13 = new JSONObject();
+            optionObj13.put("optId", 1);
+            optionObj13.put("value", place);
+            optionObj13.put("type", "radioButton");
+            optionsArr13.put(optionObj13);
+
+            JSONObject queryObj13 = new JSONObject();
+            queryObj13.put("qryId", 13);
+            queryObj13.put("title", "Place");
+            queryObj13.put("options", optionsArr13.toString());
+            queryArr.put(queryObj13);
+
             //JSONArray surFormObjArr = new JSONArray();
+
+            // If ScannedFlag is Yes, then replace the queryArr content with following
+            JSONObject queryScannedObj1 = new JSONObject();
+            queryScannedObj1.put("scanId", 1);
+            queryScannedObj1.put("scanPhoto", scannedData1);
+            queryScannedArr.put(queryScannedObj1);
+            //-------
+            JSONObject queryScannedObj2 = new JSONObject();
+            queryScannedObj2.put("scanId", 2);
+            queryScannedObj2.put("scanPhoto", scannedData2);
+            queryScannedArr.put(queryScannedObj2);
+            //-------
+            JSONObject queryScannedObj3 = new JSONObject();
+            queryScannedObj3.put("scanId", 3);
+            queryScannedObj3.put("scanPhoto", scannedData3);
+            queryScannedArr.put(queryScannedObj3);
+
+
+            String scannnedFlag = scannedFlagStr; // No or Yes
 
             JSONObject surFormObj1 = new JSONObject();
             surFormObj1.put("surFormId", 1);
-            surFormObj1.put("surformTitle", form_title);
+            surFormObj1.put("surveyeeName",surveyeeName);
+            surFormObj1.put("surdataScanned", scannnedFlag);
+            //surFormObj1.put("surformTitle", form_title);
             surFormObj1.put("place", place);
             surFormObj1.put("volId","1");
-            surFormObj1.put("queries", queryArr.toString());
+
+            if(scannnedFlag.equalsIgnoreCase("No"))
+                surFormObj1.put("queries", queryArr.toString());
+            if(scannnedFlag.equalsIgnoreCase("Yes"))
+                surFormObj1.put("queries", queryScannedArr.toString());
 
 
             //jSonObjData.put("action", "CreateSurveyForm");

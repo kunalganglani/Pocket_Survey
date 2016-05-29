@@ -8,7 +8,10 @@ import android.widget.Button;
 import android.widget.EditText;
 
 public class SendMessage extends AppCompatActivity {
-
+    public void onBackPressed() {
+        super.onBackPressed();
+        overridePendingTransition(R.anim.left_in, R.anim.right_out);
+    }
     EditText etextMblNumber, etextMsg;
     Button btnSendSMS;
     @Override

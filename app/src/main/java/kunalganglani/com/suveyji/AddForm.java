@@ -12,6 +12,10 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 public class AddForm extends AppCompatActivity {
+    public void onBackPressed() {
+        super.onBackPressed();
+        overridePendingTransition(R.anim.left_in, R.anim.right_out);
+    }
 
     private LinearLayout mLayout;
     private EditText mEditText;

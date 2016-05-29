@@ -1,14 +1,18 @@
 package kunalganglani.com.suveyji;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
-import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.io.FileInputStream;
 
 public class Volunteer extends AppCompatActivity implements View.OnClickListener {
     public void onBackPressed() {
@@ -34,8 +38,33 @@ public class Volunteer extends AppCompatActivity implements View.OnClickListener
             JSONObject jsonObject = new JSONObject(getIntent().getStringExtra("volInfoStr"));
             TextView textView = (TextView)findViewById(R.id.editText);
             textView.setText("Hi, "+jsonObject.get("vol_fname").toString()+" !");
+            /*
+            byte[] decodedString = Base64.decode(jsonObject.get("vol_photo").toString(),Base64.DEFAULT);
+            Bitmap decodedByte = BitmapFactory.decodeByteArray(decodedString, 0, decodedString.length);
+
+
+            ImageView profileView = (ImageView)findViewById(R.id.imageViewVolPic);
+
+            profileView.setImageBitmap(decodedByte);
+            */
+
+            String filename = getIntent().getStringExtra("profilePicNameStr");
+            Bitmap bmp = null;
+            try {
+                FileInputStream is = this.openFileInput(filename);
+                bmp = BitmapFactory.decodeStream(is);
+                is.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            ImageView profileView = (ImageView)findViewById(R.id.imageViewVolPic);
+
+            profileView.setImageBitmap(bmp);
+
+
+
         }
-        catch (JSONException e) {
+        catch (Exception e) {
             e.printStackTrace();
         }
 
@@ -51,12 +80,10 @@ public class Volunteer extends AppCompatActivity implements View.OnClickListener
 
             case R.id.bCampaign2:
 //                startActivity(new Intent(this,Campaign1.class));
-                overridePendingTransition(R.anim.right_in, R.anim.left_out);
                 break;
 
             case R.id.bCampaign3:
 //                startActivity(new Intent(this,Campaign1.class));
-                overridePendingTransition(R.anim.right_in, R.anim.left_out);
                 break;
 
             // case R.id.tvRegisterLink:

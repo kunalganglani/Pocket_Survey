@@ -1,9 +1,13 @@
 package kunalganglani.com.suveyji;
 
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Base64;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -21,11 +25,15 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.FileOutputStream;
 import java.util.HashMap;
 import java.util.Map;
 
 public class Login extends AppCompatActivity implements View.OnClickListener {
-
+    public void onBackPressed() {
+        super.onBackPressed();
+        overridePendingTransition(R.anim.left_in, R.anim.right_out);
+    }
     Button bLogin;
     EditText etUsername, etPassword;
     // TextView tvRegisterLink;
@@ -45,6 +53,8 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         final String REGISTER_URL = "http://prakashupadhyay.com/SurveyApp/process.php";
+        //final String REGISTER_URL = "http://10.0.2.2:8282/PocketSurvey/process.php";
+        //final String REGISTER_URL = "http://10.206.130.161:8282/PocketSurvey/process.php";
         final ProgressDialog loading;
         loading = ProgressDialog.show(this,"Verifying...","Please wait...",false,false);
         final Intent intent = new Intent(this, Volunteer.class);
@@ -116,11 +126,28 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                                                 JSONObject another_json_object = volInfoArr.getJSONObject(i);
                                                 arrays.add(another_json_object);
                                             }*/
+
+                                            try {
+                                                byte[] decodedString = Base64.decode(volJSONObject.get("vol_photo").toString(), Base64.DEFAULT);
+                                                String filename = "bitmap.png";
+                                                FileOutputStream stream = openFileOutput(filename, Context.MODE_PRIVATE);
+                                                Bitmap decodedByte = BitmapFactory.decodeByteArray(decodedString, 0, decodedString.length);
+                                                decodedByte.compress(Bitmap.CompressFormat.PNG, 100, stream);
+                                                stream.close();
+                                                decodedByte.recycle();
+                                                intent.putExtra("profilePicNameStr",filename);
+
+                                            }
+                                            catch (Exception e)
+                                            {
+                                                e.printStackTrace();
+                                            }
                                             System.out.println(volJSONObject);
                                             System.out.println("ID of Vol: "+vol_id);
+
+                                            volJSONObject.put("vol_photo",null);// This is Important to Remove Large Image from the JSON Object.
                                             intent.putExtra("volInfoStr",volJSONObject.toString() );
                                             startActivity(intent);
-                                            overridePendingTransition(R.anim.right_in, R.anim.left_out);
                                         }
 
 

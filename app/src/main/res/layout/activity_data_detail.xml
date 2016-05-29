@@ -15,150 +15,150 @@
         android:layout_height="fill_parent"
         android:layout_below="@+id/formtitle" >
 
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical" >
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:hint="Name"
-        android:id="@+id/Namelbl"
-        android:layout_below="@+id/etEducationalqualification"
-        android:layout_marginTop="40dp"
-        />
-
-
-    <TextView
-        android:text="Prakash Upadhyay"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ellipsize="start"
-        android:id="@+id/Nameval"
-        android:layout_marginLeft="100dp"
-        android:layout_marginTop="-18dp"
-        />
-
-
-        <TextView
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:hint="Age"
-            android:id="@+id/Agelbl"
-            android:layout_marginTop="40dp"
-            />
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Name"
+                android:id="@+id/Namelbl"
+                android:layout_below="@+id/etEducationalqualification"
+                android:layout_marginTop="40dp"
+                />
 
 
-        <TextView
-            android:text="21"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ellipsize="start"
-            android:id="@+id/Ageval"
-            android:layout_marginLeft="100dp"
-            android:layout_marginTop="-18dp"
-
-            />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
-            android:hint="Gender"
-            android:id="@+id/Genderlbl"
-            />
+            <TextView
+                android:text="Prakash Upadhyay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="start"
+                android:id="@+id/Nameval"
+                android:layout_marginLeft="100dp"
+                android:layout_marginTop="-18dp"
+                />
 
 
-        <TextView
-            android:text="Male"
-            android:id="@+id/Genderval"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ellipsize="start"
-            android:layout_marginLeft="100dp"
-            android:layout_marginTop="-18dp"
-            />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
-            android:hint="Education"
-            android:id="@+id/Educationlbl"
-            />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Age"
+                android:id="@+id/Agelbl"
+                android:layout_marginTop="40dp"
+                />
 
 
-        <TextView
-            android:text="8th"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ellipsize="start"
-            android:layout_marginLeft="100dp"
-            android:layout_marginTop="-18dp"
-            android:id="@+id/Educationval"
-            />
+            <TextView
+                android:text="21"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="start"
+                android:id="@+id/Ageval"
+                android:layout_marginLeft="100dp"
+                android:layout_marginTop="-18dp"
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
-            android:hint="Status"
-            android:id="@+id/Presentstatuslbl"
-            />
+                />
 
-
-        <TextView
-            android:text="Studying"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ellipsize="start"
-            android:layout_marginLeft="100dp"
-            android:layout_marginTop="-18dp"
-            android:id="@+id/Presentstatusval"
-            />
-
-        <TextView
-
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
-            android:hint="Interested?"
-            android:id="@+id/Interestlbl"
-            />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:hint="Gender"
+                android:id="@+id/Genderlbl"
+                />
 
 
-        <TextView
-            android:text="Yes"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ellipsize="start"
-            android:layout_marginLeft="100dp"
-            android:layout_marginTop="-18dp"
-            android:id="@+id/Interestval"
-            />
+            <TextView
+                android:text="Male"
+                android:id="@+id/Genderval"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="start"
+                android:layout_marginLeft="100dp"
+                android:layout_marginTop="-18dp"
+                />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
-            android:hint="Place"
-            android:id="@+id/Placelbl"
-            />
-
-
-        <TextView
-            android:text="Bangalore"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ellipsize="start"
-            android:layout_marginLeft="100dp"
-            android:layout_marginTop="-18dp"
-            android:id="@+id/Placeval"
-
-            />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:hint="Education"
+                android:id="@+id/Educationlbl"
+                />
 
 
-    </LinearLayout>
+            <TextView
+                android:text="8th"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="start"
+                android:layout_marginLeft="100dp"
+                android:layout_marginTop="-18dp"
+                android:id="@+id/Educationval"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:hint="Status"
+                android:id="@+id/Presentstatuslbl"
+                />
+
+
+            <TextView
+                android:text="Studying"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="start"
+                android:layout_marginLeft="100dp"
+                android:layout_marginTop="-18dp"
+                android:id="@+id/Presentstatusval"
+                />
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:hint="Interested?"
+                android:id="@+id/Interestlbl"
+                />
+
+
+            <TextView
+                android:text="Yes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="start"
+                android:layout_marginLeft="100dp"
+                android:layout_marginTop="-18dp"
+                android:id="@+id/Interestval"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:hint="Place"
+                android:id="@+id/Placelbl"
+                />
+
+
+            <TextView
+                android:text="Bangalore"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="start"
+                android:layout_marginLeft="100dp"
+                android:layout_marginTop="-18dp"
+                android:id="@+id/Placeval"
+
+                />
+
+
+        </LinearLayout>
     </ScrollView>
 </RelativeLayout>

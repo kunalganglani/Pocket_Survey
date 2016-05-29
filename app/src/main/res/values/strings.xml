@@ -8,4 +8,7 @@
     <string name="name">Enter your Name</string>
     <string name="contactnumber">Enter your Contact number</string>
     <string name="register">Register</string>
+    <string name="fname">First Name</string>
+    <string name="lname">Last Name</string>
+
 </resources>

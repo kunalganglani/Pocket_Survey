@@ -38,6 +38,8 @@ public class ViewData extends AppCompatActivity {
         setContentView(R.layout.activity_view_data);
 
         final String REGISTER_URL = "http://prakashupadhyay.com/SurveyApp/process.php";
+        //final String REGISTER_URL = "http://10.0.2.2:8282/PocketSurvey/process.php";
+
         final ProgressDialog loading;
         loading = ProgressDialog.show(this,"Loading...","Please wait...",false,false);
         final Intent intent = new Intent(ViewData.this, DataDetail.class);
@@ -62,7 +64,7 @@ public class ViewData extends AppCompatActivity {
                         {
                             String jsonStr = response.getString("arrRes");
                             JSONObject myjson = new JSONObject(jsonStr);
-                            final JSONArray volInfoArr = myjson.getJSONArray("volunteerRecords");
+                            final JSONArray volInfoArr = myjson.getJSONArray("surveyRecords");
                             int sizeVolArr = volInfoArr.length();
                             //ArrayList<JSONObject> arrays = new ArrayList<JSONObject>();
                             int vol_id=-1;
@@ -71,7 +73,7 @@ public class ViewData extends AppCompatActivity {
                             final String[] VolData = new String[7];
                             for (int i = 0; i < sizeVolArr; i++) {
                                 volJSONObject = volInfoArr.getJSONObject(i);
-                                String n1 = volJSONObject.get("qoption_response").toString();
+                                String n1 = volJSONObject.get("surdata_surveyee").toString();
                                 mobileArray[i] = n1;
                             }
                             ArrayAdapter adapter = new ArrayAdapter<String>(ViewData.this, R.layout.activity_listview, mobileArray);
@@ -86,11 +88,12 @@ public class ViewData extends AppCompatActivity {
                                         JSONObject temp = volInfoArr.getJSONObject(position);
 
                                         Bundle mBundle = new Bundle();
-                                        mBundle.putString("name", temp.get("qoption_response").toString());
+                                        mBundle.putString("name", temp.get("surdata_surveyee").toString());
                                         mBundle.putString("date", temp.get("surdata_date").toString());
                                         mBundle.putString("place", temp.get("surdata_place").toString());
                                         intent.putExtras(mBundle);
                                         startActivity(intent);
+                                        overridePendingTransition(R.anim.right_in, R.anim.left_out);
                                     }catch(Exception e){
                                         e.printStackTrace();
                                     }

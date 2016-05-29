@@ -350,13 +350,53 @@
                 android:layout_marginTop="40dp"
                 />
 
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:ellipsize="start"
+                android:gravity="center"
+                android:layout_centerInParent="true"
+                android:background="@drawable/edittextstyle"
+                android:hint="Scanned?(Yes/No)"
+                android:id="@+id/etScannedFlag"
+                android:layout_below="@+id/etPlace"
+                android:layout_marginTop="40dp"
+                />
+
+            <ImageView
+                android:id="@+id/imageViewScanned1"
+                android:layout_width="50pt"
+                android:layout_height="50pt"
+                android:layout_centerInParent="true"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/etScannedFlag"
+                android:src="@drawable/ic_launcher" />
+
+            <ImageView
+                android:id="@+id/imageViewScanned2"
+                android:layout_width="50pt"
+                android:layout_height="50pt"
+                android:layout_centerInParent="true"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/imageViewScanned1"
+                android:src="@drawable/my_pic" />
+
+            <ImageView
+                android:id="@+id/imageViewScanned3"
+                android:layout_width="50pt"
+                android:layout_height="50pt"
+                android:layout_centerInParent="true"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/imageViewScanned2"
+                android:src="@drawable/suveyjilogo" />
+
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Submit"
                 android:id="@+id/bSubmit"
                 android:layout_centerVertical="true"
-                android:layout_below="@+id/etInterest"
+                android:layout_below="@+id/imageViewScanned3"
                 android:layout_marginTop="40dp"
                 android:textColor="#ffffff"
                 android:textSize="16sp"
