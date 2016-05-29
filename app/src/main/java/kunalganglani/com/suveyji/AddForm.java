@@ -1,9 +1,11 @@
 package kunalganglani.com.suveyji;
 
+import android.graphics.drawable.Drawable;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.widget.AdapterView;
@@ -88,7 +90,6 @@ public class AddForm extends AppCompatActivity {
                         break;
                     case 2:
                         mLayout.addView(createNewRadioGroup(mEditText.getText().toString()));
-
                         mEditText.setText("");
                         break;
                     case 3:
@@ -105,14 +106,19 @@ public class AddForm extends AppCompatActivity {
         final ActionBar.LayoutParams lparams = new ActionBar.LayoutParams(ActionBar.LayoutParams.MATCH_PARENT, ActionBar.LayoutParams.WRAP_CONTENT);
         final TextView textView = new TextView(this);
         textView.setLayoutParams(lparams);
-        textView.setText("" + text);
+       // lparams.setMargins(0,20,0,0);
+        textView.setHint("" + text);
         return textView;
     }
     private EditText createNewEditTextArea(String text) {
+//        android:ellipsize="start"
+
         final ActionBar.LayoutParams lparams = new ActionBar.LayoutParams(ActionBar.LayoutParams.MATCH_PARENT, ActionBar.LayoutParams.WRAP_CONTENT);
         final EditText editText= new EditText(this);
         editText.setLayoutParams(lparams);
-        editText.setHint("\n\t " + text);
+        editText.setBackgroundResource(R.drawable.edittextstyle);
+        editText.setHint("\n " + text);
+        editText.setGravity(Gravity.CENTER);
         //editText.setLayoutParams(new ActionBar.LayoutParams(ActionBar.LayoutParams.MATCH_PARENT, ActionBar.LayoutParams.WRAP_CONTENT));
         editText.setLines(5);
         editText.setHorizontallyScrolling(false);
@@ -124,9 +130,12 @@ public class AddForm extends AppCompatActivity {
     }
     private EditText createNewEditText(String text) {
         final ActionBar.LayoutParams lparams = new ActionBar.LayoutParams(ActionBar.LayoutParams.MATCH_PARENT, ActionBar.LayoutParams.WRAP_CONTENT);
+        //lparams.setMargins(0,20,0,0);
         final EditText editText= new EditText(this);
+        editText.setBackgroundResource(R.drawable.edittextstyle);
         editText.setLayoutParams(lparams);
         editText.setHint("" + text);
+        editText.setGravity(Gravity.CENTER);
         //editText.setLayoutParams(new ActionBar.LayoutParams(ActionBar.LayoutParams.MATCH_PARENT, ActionBar.LayoutParams.WRAP_CONTENT));
         return editText;
     }
@@ -139,6 +148,7 @@ public class AddForm extends AppCompatActivity {
 
         RadioGroup group = new RadioGroup(this);
         group.setLayoutParams(lparams);
+        group.setBackgroundResource(R.drawable.edittextstyle);
         group.setOrientation(RadioGroup.HORIZONTAL);
         RadioButton btn1 = new RadioButton(this);
         btn1.setText("Yes");
