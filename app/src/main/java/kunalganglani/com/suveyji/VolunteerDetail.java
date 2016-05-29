@@ -3,25 +3,27 @@ package kunalganglani.com.suveyji;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.io.FileInputStream;
 
-public class VolunteerDetail extends AppCompatActivity {
+public class VolunteerDetail extends AppCompatActivity implements View.OnClickListener  {
     public void onBackPressed() {
         super.onBackPressed();
         overridePendingTransition(R.anim.left_in, R.anim.right_out);
     }
-
+    Button callbtn,msgbtn;
+    String number;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_volunteer_detail);
-
         Intent in = getIntent();
         Bundle b = in.getExtras();
 
@@ -35,6 +37,7 @@ public class VolunteerDetail extends AppCompatActivity {
         String dob = b.getString("dob");
         String dor = b.getString("dor");
         String contact = b.getString("contact");
+        number=contact;
 
         TextView textView1 = (TextView)findViewById(R.id.NameVal);
         TextView textView2 = (TextView)findViewById(R.id.ageval);
@@ -44,9 +47,10 @@ public class VolunteerDetail extends AppCompatActivity {
         TextView textView6 = (TextView)findViewById(R.id.registeredonval);
         TextView textView7 = (TextView)findViewById(R.id.birthdateval);
 
-        Button callbtn = (Button)findViewById(R.id.button);
-        Button msgbtn = (Button)findViewById(R.id.button2);
-
+        callbtn = (Button)findViewById(R.id.button);
+        msgbtn = (Button)findViewById(R.id.button2);
+        callbtn.setOnClickListener(this);
+        msgbtn.setOnClickListener(this);
         textView1.setText(fname + " " + lname);
         textView2.setText(age);
         textView3.setText(gender);
@@ -69,4 +73,29 @@ public class VolunteerDetail extends AppCompatActivity {
         profileView.setImageBitmap(bmp);
 
     }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.button: {
+                Intent intent = new Intent(Intent.ACTION_DIAL);
+                intent.setData(Uri.parse("tel:"+ number));
+                startActivity(intent);
+                overridePendingTransition(R.anim.right_in, R.anim.left_out);
+                break;
+
+            }
+            case R.id.button2: {
+                Intent i= new Intent(this, SendMessage.class);
+                i.putExtra("contactnumberval",number);
+                startActivity(i);
+                overridePendingTransition(R.anim.right_in, R.anim.left_out);
+                break;
+
+            }
+        }
+
+
+
+            }
 }

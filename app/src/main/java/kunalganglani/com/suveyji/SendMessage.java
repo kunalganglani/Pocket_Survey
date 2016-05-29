@@ -14,12 +14,11 @@ public class SendMessage extends AppCompatActivity {
     }
     EditText etextMblNumber, etextMsg;
     Button btnSendSMS;
+    String contactnumber;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_send_message);
-
-        String contactnumber="";
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
              contactnumber = extras.getString("contactnumberval");
@@ -29,7 +28,7 @@ public class SendMessage extends AppCompatActivity {
         etextMsg= (EditText)findViewById(R.id.etextMsg);
         btnSendSMS=(Button)findViewById(R.id.btnSendSMS);
 
-        etextMblNumber.setText("+91"+contactnumber);
+        etextMblNumber.setText(""+contactnumber);
 }
 
     public void sendSms(View view) {

@@ -194,7 +194,7 @@
                 android:textColor="#ffffff"
                 android:textSize="16sp"
                 android:background="@drawable/mybutton"
-                android:onClick="call"/>
+                />
 
             <Button
                 android:layout_width="match_parent"
@@ -207,7 +207,7 @@
                 android:textColor="#ffffff"
                 android:textSize="16sp"
                 android:background="@drawable/mybutton"
-                android:onClick="msg"/>
+                />
         </LinearLayout>
     </ScrollView>
 
