@@ -66,6 +66,8 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                 {
                     loading.dismiss();
                     startActivity(new Intent(this,Admin.class));
+                    etUsername.setText("");
+                    etPassword.setText("");
                     overridePendingTransition(R.anim.right_in, R.anim.left_out);
                 }
 
@@ -148,6 +150,9 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                                             volJSONObject.put("vol_photo",null);// This is Important to Remove Large Image from the JSON Object.
                                             intent.putExtra("volInfoStr",volJSONObject.toString() );
                                             startActivity(intent);
+                                            etUsername.setText("");
+                                            etPassword.setText("");
+
                                         }
 
 
