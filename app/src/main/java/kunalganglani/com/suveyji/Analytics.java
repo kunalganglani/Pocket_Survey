@@ -27,9 +27,30 @@ public class Analytics extends AppCompatActivity {
         overridePendingTransition(R.anim.left_in, R.anim.right_out);
     }
 
+
+    public static String Location[]= new String[6];
+    public static float Value[]= new float[6];
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Location[0]="Delhi" ;
+        Location[1] = "Indore";
+        Location[2] = "Mumbai";
+        Location[3] = "Bangalore";
+        Location[4] = "Pune";
+        Location[5] = "Kolkata";
+
+        Value[0]=4f;
+        Value[1] = 8f;
+        Value[2] = 6f;
+        Value[3] = 12f;
+        Value[4] = 18f;
+        Value[5] = 9f;
+
+
         setContentView(R.layout.activity_analytics);
         Spinner dropdown = (Spinner)findViewById(R.id.spinner2);
         String[] items = new String[]{"Bar Graph", "Pie Chart"};
@@ -49,22 +70,22 @@ public class Analytics extends AppCompatActivity {
                         // HorizontalBarChart barChart= (HorizontalBarChart) findViewById(R.id.chart);
 
                         ArrayList<BarEntry> entries1 = new ArrayList<>();
-                        entries1.add(new BarEntry(4f, 0));
-                        entries1.add(new BarEntry(8f, 1));
-                        entries1.add(new BarEntry(6f, 2));
-                        entries1.add(new BarEntry(12f, 3));
-                        entries1.add(new BarEntry(18f, 4));
-                        entries1.add(new BarEntry(9f, 5));
+                        entries1.add(new BarEntry(Value[0], 0));
+                        entries1.add(new BarEntry(Value[1], 1));
+                        entries1.add(new BarEntry(Value[2], 2));
+                        entries1.add(new BarEntry(Value[3], 3));
+                        entries1.add(new BarEntry(Value[4], 4));
+                        entries1.add(new BarEntry(Value[5], 5));
 
-                        BarDataSet dataset1 = new BarDataSet(entries1, "# of Calls");
+                        BarDataSet dataset1 = new BarDataSet(entries1, "# of People Interested in Computer Course");
 
                         ArrayList<String> labels1 = new ArrayList<String>();
-                        labels1.add("January");
-                        labels1.add("February");
-                        labels1.add("March");
-                        labels1.add("April");
-                        labels1.add("May");
-                        labels1.add("June");
+                        labels1.add(Location[0]);
+                        labels1.add(Location[1]);
+                        labels1.add(Location[2]);
+                        labels1.add(Location[3]);
+                        labels1.add(Location[4]);
+                        labels1.add(Location[5]);
 
         /* for create Grouped Bar chart
         ArrayList<BarEntry> group1 = new ArrayList<>();
@@ -98,42 +119,42 @@ public class Analytics extends AppCompatActivity {
                         BarData data1 = new BarData(labels1, dataset1);
                         // dataset.setColors(ColorTemplate.COLORFUL_COLORS); //
                         barChart.setData(data1);
-                        barChart.setDescription("");
+                        barChart.setDescription("Location Vs Count-of-Interested-folks");
                         barChart.setNoDataText(""); // this is the top line
                         barChart.setNoDataTextDescription(""); // this is one line below the no-data-text
                         barChart.invalidate();
-                        barChart.animateY(5000);
+                        barChart.animateY(3000);
                         break;
                     case 1:
                         barChart.setVisibility(View.INVISIBLE);
                         pieChart.setVisibility(View.VISIBLE);
                         ArrayList<Entry> entries = new ArrayList<>();
-                        entries.add(new Entry(4f, 0));
-                        entries.add(new Entry(8f, 1));
-                        entries.add(new Entry(6f, 2));
-                        entries.add(new Entry(12f, 3));
-                        entries.add(new Entry(18f, 4));
-                        entries.add(new Entry(9f, 5));
+                        entries.add(new Entry(Value[0], 0));
+                        entries.add(new Entry(Value[1], 1));
+                        entries.add(new Entry(Value[2], 2));
+                        entries.add(new Entry(Value[3], 3));
+                        entries.add(new Entry(Value[4], 4));
+                        entries.add(new Entry(Value[5], 5));
 
-                        PieDataSet dataset = new PieDataSet(entries, "# of Calls");
+                        PieDataSet dataset = new PieDataSet(entries, "#People Interested");
 
                         ArrayList<String> labels = new ArrayList<String>();
-                        labels.add("January");
-                        labels.add("February");
-                        labels.add("March");
-                        labels.add("April");
-                        labels.add("May");
-                        labels.add("June");
+                        labels.add(Location[0]);
+                        labels.add(Location[1]);
+                        labels.add(Location[2]);
+                        labels.add(Location[3]);
+                        labels.add(Location[4]);
+                        labels.add(Location[5]);
 
                         PieData data = new PieData(labels, dataset);
                         dataset.setColors(ColorTemplate.COLORFUL_COLORS); //
-                        pieChart.setDescription("Description");
+                        pieChart.setDescription("Location Vs Count-of-Interested-folks");
                         pieChart.setNoDataText(""); // this is the top line
                         pieChart.setNoDataTextDescription(""); // this is one line below the no-data-text
                         pieChart.invalidate();
                         pieChart.setData(data);
 
-                        pieChart.animateY(5000);
+                        pieChart.animateY(3000);
 
                         pieChart.saveToGallery("/sd/mychart.jpg", 85); // 85 is the quality of the image
                         break;
