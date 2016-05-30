@@ -103,11 +103,10 @@ public class DataDetail extends AppCompatActivity {
                             for (int i = 0; i < sizeSurdataArr; i++)
                             {
                                 surformJSONObject = surdataInfoArr.getJSONObject(i);
-                                mLayout.addView(createNewEditText(surformJSONObject.getString("surdata_surveyee")));
+                                //mLayout.addView(createNewEditText(surformJSONObject.getString("surdata_surveyee")));
+                                mLayout.addView(createNewTextView("Survey Form Title:"));
                                 mLayout.addView(createNewEditText(surformJSONObject.getString("surform_title")));
-                                mLayout.addView(createNewEditText(surformJSONObject.getString("surdata_date")));
-                                mLayout.addView(createNewEditText(surformJSONObject.getString("surdata_place")));
-                                mLayout.addView(createNewEditText(surformJSONObject.getString("vol_fname")+" "+surformJSONObject.getString("vol_lname")));
+                                //mLayout.addView(createNewEditText(surformJSONObject.getString("surdata_place")));
 
                                 //JSONObject abc = new JSONObject(surformJSONObject.getString("questionArray"));
                                 final JSONArray questionArr = surformJSONObject.getJSONArray("questionArray");
@@ -116,6 +115,10 @@ public class DataDetail extends AppCompatActivity {
                                 {
                                     questionJSONObject = questionArr.getJSONObject(j);
                                     //mLayout.addView(createNewEditText(questionJSONObject.getString("query_id")));
+                                    if(questionJSONObject.getString("query_title").endsWith( ":" )) {
+                                        mLayout.addView(createNewTextView(questionJSONObject.getString("query_title")));
+                                    }
+                                    else
                                     mLayout.addView(createNewEditText(questionJSONObject.getString("query_title")));
 
                                     final JSONArray optionArr = questionJSONObject.getJSONArray("optionArray");
@@ -123,11 +126,20 @@ public class DataDetail extends AppCompatActivity {
                                     for (int k = 0; k < sizeOptionArr; k++) {
                                         optionJSONObject = optionArr.getJSONObject(k);
                                         //mLayout.addView(createNewEditText(optionJSONObject.getString("option_id")));
-                                        mLayout.addView(createNewEditText(optionJSONObject.getString("option_response")));
-                                        mLayout.addView(createNewEditText(optionJSONObject.getString("option_type")));
+                                        //str.substring(0,str.length()-1);
+//                                        optionJSONObject.getString("option_response").substring(0,str.length()-1)
+                                        String str=optionJSONObject.getString("option_response");
+                                        //str.substring(0,str.length()-1);
+                                        mLayout.addView(createNewEditText(str));
+                                        //mLayout.addView(createNewEditText(optionJSONObject.getString("option_type")));
                                     }
 
                                 }
+                                mLayout.addView(createNewTextView("Date:"));
+                                mLayout.addView(createNewEditText(surformJSONObject.getString("surdata_date")));
+                                mLayout.addView(createNewTextView("Survey Taken By:"));
+                                mLayout.addView(createNewEditText(surformJSONObject.getString("vol_fname")+" "+surformJSONObject.getString("vol_lname")));
+
 
 
                             }
@@ -183,7 +195,7 @@ public class DataDetail extends AppCompatActivity {
 //        String city = b.getString("city");
 //        String reg = b.getString("reg");
 
-        TextView textView10 = (TextView)findViewById(R.id.Nameval);
+        //TextView textView10 = (TextView)findViewById(R.id.Nameval);
 //        TextView textView11 = (TextView)findViewById(R.id.ageval);
 //        TextView textView12 = (TextView)findViewById(R.id.genderval);
 //        TextView textView13 = (TextView)findViewById(R.id.contactnumberval);
@@ -191,7 +203,7 @@ public class DataDetail extends AppCompatActivity {
 //        TextView textView15 = (TextView)findViewById(R.id.registeredonval);
 
 
-        textView10.setText(name3);
+        //textView10.setText(name3);
 
     }
 
@@ -227,6 +239,7 @@ public class DataDetail extends AppCompatActivity {
         final EditText editText= new EditText(this);
         editText.setBackgroundResource(R.drawable.edittextstyle);
         editText.setLayoutParams(lparams);
+        editText.setFocusable(false);
         editText.setHint("" + text);
         editText.setGravity(Gravity.CENTER);
         //editText.setLayoutParams(new ActionBar.LayoutParams(ActionBar.LayoutParams.MATCH_PARENT, ActionBar.LayoutParams.WRAP_CONTENT));

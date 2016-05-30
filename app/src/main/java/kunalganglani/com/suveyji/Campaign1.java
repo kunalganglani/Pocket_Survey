@@ -5,6 +5,7 @@ import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Base64;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -165,8 +166,8 @@ public class Campaign1 extends AppCompatActivity implements View.OnClickListener
         // ############
 
 
-        //final String REGISTER_URL = "http://prakashupadhyay.com/SurveyApp/process.php";
-        final String REGISTER_URL = "http://10.0.2.2:8282/PocketSurvey/process.php";
+        final String REGISTER_URL = "http://prakashupadhyay.com/SurveyApp/process.php";
+        //final String REGISTER_URL = "http://10.0.2.2:8282/PocketSurvey/process.php";
 
 
         JSONObject jSonObjData = new JSONObject();
@@ -392,6 +393,14 @@ public class Campaign1 extends AppCompatActivity implements View.OnClickListener
                 surFormObj1.put("queries", queryArr.toString());
             if(scannnedFlag.equalsIgnoreCase("Yes"))
                 surFormObj1.put("queries", queryScannedArr.toString());
+// Check if device is disconnected from internet. If true, save the JSONObject in SQL
+            if (AppStatus.getInstance(this).isOnline()) {
+                //Toast t = Toast.makeText(this,"You are online!!!!",8000).show();
+                Log.v("Home","You are online !");
+            } else {
+                //Toast t = Toast.makeText(this,"You are not online!!!!",8000).show();
+                Log.v("Home", "You are not online!!!!");
+            }
 
 
             //jSonObjData.put("action", "CreateSurveyForm");
