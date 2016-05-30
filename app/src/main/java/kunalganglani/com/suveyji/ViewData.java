@@ -91,6 +91,8 @@ public class ViewData extends AppCompatActivity {
                                         mBundle.putString("name", temp.get("surdata_surveyee").toString());
                                         mBundle.putString("date", temp.get("surdata_date").toString());
                                         mBundle.putString("place", temp.get("surdata_place").toString());
+                                        mBundle.putString("surdataId", temp.get("surdata_id").toString());
+                                        mBundle.putString("surdataScanned", temp.get("surdata_scanned").toString());
                                         intent.putExtras(mBundle);
                                         startActivity(intent);
                                         overridePendingTransition(R.anim.right_in, R.anim.left_out);
