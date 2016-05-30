@@ -9,11 +9,14 @@ import android.widget.Spinner;
 
 import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.charts.HorizontalBarChart;
+import com.github.mikephil.charting.charts.LineChart;
 import com.github.mikephil.charting.charts.PieChart;
 import com.github.mikephil.charting.data.BarData;
 import com.github.mikephil.charting.data.BarDataSet;
 import com.github.mikephil.charting.data.BarEntry;
 import com.github.mikephil.charting.data.Entry;
+import com.github.mikephil.charting.data.LineData;
+import com.github.mikephil.charting.data.LineDataSet;
 import com.github.mikephil.charting.data.PieData;
 import com.github.mikephil.charting.data.PieDataSet;
 import com.github.mikephil.charting.utils.ColorTemplate;
@@ -53,7 +56,7 @@ public class Analytics extends AppCompatActivity {
 
         setContentView(R.layout.activity_analytics);
         Spinner dropdown = (Spinner)findViewById(R.id.spinner2);
-        String[] items = new String[]{"Bar Graph", "Pie Chart"};
+        String[] items = new String[]{"Bar Graph", "Pie Chart", "Line Graph"};
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, items);
         dropdown.setAdapter(adapter);
         dropdown.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -61,10 +64,12 @@ public class Analytics extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 BarChart barChart = (BarChart) findViewById(R.id.chart);
                 PieChart pieChart = (PieChart) findViewById(R.id.piechart);
+                LineChart lineChart = (LineChart)findViewById(R.id.linechart);
 
                 switch (position) {
                     case 0:
                         pieChart.setVisibility(View.INVISIBLE);
+                        lineChart.setVisibility(View.INVISIBLE);
                         barChart.setVisibility(View.VISIBLE);
 
                         // HorizontalBarChart barChart= (HorizontalBarChart) findViewById(R.id.chart);
@@ -127,6 +132,7 @@ public class Analytics extends AppCompatActivity {
                         break;
                     case 1:
                         barChart.setVisibility(View.INVISIBLE);
+                        lineChart.setVisibility(View.INVISIBLE);
                         pieChart.setVisibility(View.VISIBLE);
                         ArrayList<Entry> entries = new ArrayList<>();
                         entries.add(new Entry(Value[0], 0));
@@ -158,7 +164,41 @@ public class Analytics extends AppCompatActivity {
 
                         pieChart.saveToGallery("/sd/mychart.jpg", 85); // 85 is the quality of the image
                         break;
+                    case 2:
+                        pieChart.setVisibility(View.INVISIBLE);
+                        barChart.setVisibility(View.INVISIBLE);
+                        lineChart.setVisibility(View.VISIBLE);
 
+                        ArrayList<Entry> entries2 = new ArrayList<>();
+                        entries2.add(new Entry(Value[0], 0));
+                        entries2.add(new Entry(Value[1], 1));
+                        entries2.add(new Entry(Value[2], 2));
+                        entries2.add(new Entry(Value[3], 3));
+                        entries2.add(new Entry(Value[4], 4));
+                        entries2.add(new Entry(Value[5], 5));
+
+                        LineDataSet dataset2 = new LineDataSet(entries2, "#People Interested");
+
+                        ArrayList<String> labels2 = new ArrayList<String>();
+                        labels2.add(Location[0]);
+                        labels2.add(Location[1]);
+                        labels2.add(Location[2]);
+                        labels2.add(Location[3]);
+                        labels2.add(Location[4]);
+                        labels2.add(Location[5]);
+
+                        LineData data2 = new LineData(labels2, dataset2);
+                        lineChart.setData(data2); // set the data and list of lables into chart
+
+                        //dataset.setColors(ColorTemplate.COLORFUL_COLORS); //
+                        lineChart.setDescription("Location Vs Count-of-Interested-folks");
+                        dataset2.setDrawCubic(true);
+                        dataset2.setDrawFilled(true);
+
+                        lineChart.animateY(3000);
+
+                        //pieChart.saveToGallery("/sd/mychart.jpg", 85); // 85 is the quality of the image
+                        break;
 
                 }
                 //Log.v("item", (String) parent.getItemAtPosition(position));
