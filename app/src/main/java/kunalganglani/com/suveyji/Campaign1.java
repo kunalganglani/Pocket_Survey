@@ -1,8 +1,11 @@
 package kunalganglani.com.suveyji;
 
 import android.app.ProgressDialog;
+import android.content.ContentValues;
 import android.graphics.Bitmap;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.Telephony;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Base64;
 import android.util.Log;
@@ -37,6 +40,7 @@ public class Campaign1 extends AppCompatActivity implements View.OnClickListener
         overridePendingTransition(R.anim.left_in, R.anim.right_out);
     }
     TextView formtitle;
+    String surveyData;
     EditText etName, etAge,etAddress,etLanguagesknown,etNoOfPeople,etNonEarning,etTotalIncome,etPlace;
     RadioGroup etGender,etMaritalstatus,etEducationalqualification,etPresentstatus,etInterest;
     Button bSubmit;
@@ -393,22 +397,23 @@ public class Campaign1 extends AppCompatActivity implements View.OnClickListener
                 surFormObj1.put("queries", queryArr.toString());
             if(scannnedFlag.equalsIgnoreCase("Yes"))
                 surFormObj1.put("queries", queryScannedArr.toString());
-// Check if device is disconnected from internet. If true, save the JSONObject in SQL
-            if (AppStatus.getInstance(this).isOnline()) {
-                //Toast t = Toast.makeText(this,"You are online!!!!",8000).show();
-                Log.v("Home","You are online !");
+
+            // Check if device is disconnected from internet. If true, save the JSONObject in SQL
+            if (!(AppStatus.getInstance(this).isOnline())) {
+                Log.v("Home","You are offline !");
+                surveyData = surFormObj1.toString();
+
+                ContentValues values = new ContentValues();
+                values.put(Draft.NAME, surveyData);
+
+                Uri uri = getContentResolver().insert(Draft.CONTENT_URI, values);
+                Toast.makeText(getBaseContext(),
+                        "Data stored locally. Will be synced when online.", Toast.LENGTH_LONG).show();
             } else {
-                //Toast t = Toast.makeText(this,"You are not online!!!!",8000).show();
                 Log.v("Home", "You are not online!!!!");
+                jSonObjData.put("action", "SaveSurveyData");
+                jSonObjData.put("data", surFormObj1.toString());
             }
-
-
-            //jSonObjData.put("action", "CreateSurveyForm");
-            //jSonObjData.put("data", surFormObj1.toString());
-
-            jSonObjData.put("action", "SaveSurveyData");
-            jSonObjData.put("data", surFormObj1.toString());
-
 
 
         } catch (JSONException e) {

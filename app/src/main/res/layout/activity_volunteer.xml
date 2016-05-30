@@ -76,29 +76,11 @@
         android:id="@+id/bCampaign1"
         android:layout_below="@+id/editText2"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="60dp"
         android:textColor="#ffffff"
         android:textSize="18sp"
         android:background="@drawable/mybutton"/>
 
-    <info.hoang8f.widget.FButton
-        fbutton:buttonColor="#5868C2"
-        fbutton:shadowColor="#25358F"
-        android:minHeight="50dp"
-        fbutton:cornerRadius="5dp"
-        fbutton:shadowEnabled="true"
-        fbutton:shadowHeight="8dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Save the Girl Child"
-        android:id="@+id/bCampaign2"
-        android:layout_below="@+id/bCampaign1"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="45dp"
-        android:textColor="#ffffff"
-        android:textSize="18sp"
-        android:background="@drawable/mybutton"
-        />
 
     <info.hoang8f.widget.FButton
         fbutton:buttonColor="#5868C2"
@@ -111,10 +93,16 @@
         android:layout_height="wrap_content"
         android:text="Employment Scheme"
         android:id="@+id/bCampaign3"
-        android:layout_below="@+id/bCampaign2"
+        android:layout_below="@+id/bCampaign1"
         android:layout_marginTop="45dp"
         android:textColor="#ffffff"
         android:textSize="18sp"
         android:background="@drawable/mybutton"
         />
+    <ListView
+        android:id="@+id/mobile_list"
+        android:layout_width="match_parent"
+        android:layout_below="@+id/bCampaign3"
+        android:layout_height="wrap_content" />
+
 </RelativeLayout>

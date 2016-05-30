@@ -162,7 +162,7 @@ public class Analytics extends AppCompatActivity {
 
                         pieChart.animateY(3000);
 
-                        pieChart.saveToGallery("/sd/mychart.jpg", 85); // 85 is the quality of the image
+                        //pieChart.saveToGallery("/sd/mychart.jpg", 85); // 85 is the quality of the image
                         break;
                     case 2:
                         pieChart.setVisibility(View.INVISIBLE);

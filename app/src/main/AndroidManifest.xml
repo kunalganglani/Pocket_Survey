@@ -3,13 +3,15 @@
     package="kunalganglani.com.suveyji">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.CAMERA" />
+
     <uses-feature android:name="android.hardware.camera" />
     <uses-feature android:name="android.hardware.camera.autofocus" />
+
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.SEND_SMS" />
-
 
     <application
         android:allowBackup="true"
@@ -43,7 +45,20 @@
         <activity android:name=".DataDetail" />
         <activity android:name=".VolunteerDetail" />
         <activity android:name=".Analytics" />
-        <activity android:name=".SendMessage"></activity>
+        <activity android:name=".SendMessage" />
+
+        <receiver android:name=".NetworkChangeReceiver">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+        </receiver>
+
+         <provider
+             android:authorities = "com.example.provider.College"
+             android:name="Draft">
+         </provider>
+
+        <activity android:name=".SurformDetails"></activity>
     </application>
 
 </manifest>

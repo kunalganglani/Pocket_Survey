@@ -5,9 +5,6 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.util.Log;
 
-/**
- * Created by I304684 on 5/30/2016.
- */
 public class AppStatus {
     private static AppStatus instance = new AppStatus();
     static Context context;
