@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:fbutton="http://schemas.android.com/apk/res-auto"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
@@ -47,7 +47,13 @@
         android:layout_toLeftOf="@+id/imageViewVolPic"
         android:layout_toStartOf="@+id/imageViewVolPic" />
 
-    <Button
+    <info.hoang8f.widget.FButton
+        fbutton:buttonColor="#5868C2"
+        fbutton:shadowColor="#25358F"
+        android:minHeight="50dp"
+        fbutton:cornerRadius="5dp"
+        fbutton:shadowEnabled="true"
+        fbutton:shadowHeight="8dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Need Assessment Survey"
@@ -59,7 +65,13 @@
         android:textSize="18sp"
         android:background="@drawable/mybutton"/>
 
-    <Button
+    <info.hoang8f.widget.FButton
+        fbutton:buttonColor="#5868C2"
+        fbutton:shadowColor="#25358F"
+        android:minHeight="50dp"
+        fbutton:cornerRadius="5dp"
+        fbutton:shadowEnabled="true"
+        fbutton:shadowHeight="8dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Save the Girl Child"
@@ -72,7 +84,13 @@
         android:background="@drawable/mybutton"
         />
 
-    <Button
+    <info.hoang8f.widget.FButton
+        fbutton:buttonColor="#5868C2"
+        fbutton:shadowColor="#25358F"
+        android:minHeight="50dp"
+        fbutton:cornerRadius="5dp"
+        fbutton:shadowEnabled="true"
+        fbutton:shadowHeight="8dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Employment Scheme"
